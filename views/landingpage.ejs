@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shapeshift</title>
+    <link rel="stylesheet" href="/styles/landingpage.css" />
+  </head>
+
+  <body>
+    <%- include('partials/navbar') %>
+
+    <section class="mainpart">
+      <div class="headerpart">
+        <div class="intro_part">
+          <small>let's start with</small>
+          <h2>ShapeShift</h2>
+        </div>
+        <img class="background_img" src="./images/rm422-047.jpg" alt="" />
+        <img class="yoga_img" src="./images/meditation (1).png" alt="" />
+        <div class="flowerspart">
+          <img src="./images/daisy.png" alt="" />
+          <img src="./images/daisy.png" alt="" />
+          <img src="./images/daisy.png" alt="" />
+          <img src="./images/daisy.png" alt="" />
+          <img src="./images/daisy.png" alt="" />
+          <img src="./images/daisy.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".responsive_sidebar");
+        sidebar.style.display = "flex";
+      }
+      function hideSidebar() {
+        const sidebar = document.querySelector(".responsive_sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
+  </body>
+</html>

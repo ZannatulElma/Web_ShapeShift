@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/login_signup.css" />
+    <title>Shape Shift</title>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+    <form action="/signup" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" name="username" placeholder="Username" required />
+      <label for="email">Email:</label>
+      <input type="email" name="email" placeholder="Email" required />
+      <label for="password">Password:</label>
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>
+      Already have an account? <span><a href="/login">Login</a></span>
+    </p>
+
+    <!-- Showing errors -->
+    <% if (typeof error !== 'undefined') { %>
+    <script>
+      const alertMessage = "<%= error %>";
+      if (alertMessage) {
+        alert(alertMessage);
+      }
+    </script>
+    <% } %>
+  </body>
+</html>

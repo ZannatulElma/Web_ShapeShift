@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/moodtracker.css" />
+    <title>ShapeShift</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <section class="moodtracker">
+      <div class="mood-today">
+        <h2>Hello <%= user.username %>, how are you feeling today?</h2>
+        <form action="/addMood" method="POST">
+          <ul class="mood-list">
+            <% moodsArr.forEach(function(mood) { %>
+            <li>
+              <label>
+                <div class="mood-item">
+                  <img src="<%= '/images/' + mood + '.png' %>" />
+                  <div><%= mood %></div>
+                  <input
+                    type="radio"
+                    name="selectedMood"
+                    value="<%= mood %>"
+                    required
+                  />
+                </div>
+              </label>
+            </li>
+            <% }); %>
+          </ul>
+
+          <label for="note" class="note-label">Note:</label>
+          <textarea
+            name="note"
+            id="note"
+            class="note-input"
+            maxlength="255"
+          ></textarea>
+
+          <button class="submit-button" type="submit">Submit</button>
+        </form>
+      </div>
+
+      <% if (last7Moods.length > 0) { %>
+      <div class="mood-today">
+        <h2>Here are your last 7 entries</h2>
+        <ul class="mood-list">
+          <% last7Moods.forEach(function(moodObject) { %>
+          <li>
+            <img src="<%= '/images/' + moodObject.mood + '.png' %>" />
+            <div class="mood-item">
+              <div><%= moodObject.mood %></div>
+            </div>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+      <% } %>
+
+      <div class="mood-today">
+        <div class="recommendations">
+          <h2>Recommendation based on your entries</h2>
+          <iframe
+            src="<%= recommendedVideo %>"
+            width="560"
+            height="315"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <h2 style="margin-top: 5rem">Here is a quotation for you</h2>
+          <p class="quotation"><%= recommendedQuote %></p>
+        </div>
+      </div>
+      <a href="/resetMoods">
+        <button class="reset-moods-button">Reset Moods</button>
+      </a>
+    </section>
+  </body>
+</html>
