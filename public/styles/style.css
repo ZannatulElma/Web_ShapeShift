@@ -10,8 +10,8 @@
 
 :root {
     --main-color:#ff702a;
-    --text-color:#fff;
-    --bg-color:#1e1c2a;
+    --text-color:#000;
+    --bg-color:#aadfaa;
     --big-font:4rem;
     --h2-font:2.25rem;
     --p-font:0.9rem;
@@ -46,7 +46,7 @@ header{
     font-size: 2.4rem;
 }
 
-.navbar{
+/* .navbar{
     display: flex;
 }
 
@@ -60,7 +60,7 @@ header{
 .navbar a:hover{
     color: var(--main-color);
     transition: .4s;
-}
+} */
 
 #menu-icon{
     font-size: 2rem;
@@ -68,11 +68,12 @@ header{
     display: none;
 }
 
-section{
+/* section{
     padding: 70px 17%;
-}
+} */
 
 .home{
+    padding: 70px 17%;
     width: 100%;
     min-height: 90vh;
     display: grid;
@@ -111,6 +112,7 @@ section{
 }
 
 .about{
+    padding: 70px 10%;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     grid-gap: 1.5rem;
@@ -150,6 +152,7 @@ section{
 }
 
 .team {
+    padding: 50px 5%;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(4, 1fr); /* Change the number of columns to 4 */
@@ -169,6 +172,7 @@ section{
     border-radius: 15px;
     box-shadow: 3px 5px 5px rgba(1,1,1,0.2);
     transition: 0.3s ease-in-out;
+    background-color: #85CC7E;
 }
 
 .card img {
@@ -186,10 +190,15 @@ section{
 
 .card_container{
     padding: 20px;
+    background-color: #85CC7E;
 }
 
 .card_container h3{
     margin-bottom: 10px;
+}
+
+span {
+    font-size: 20px;
 }
 
 @media (max-width: 768px) {
@@ -203,9 +212,9 @@ section{
         width: 100%;
     }
 
-    .navbar.show {
+    /* .navbar.show {
         display: flex;
-    }
+    } */
 }
 
 @media (max-width: 768px) {
@@ -274,9 +283,9 @@ section{
 }
 
 @media (max-width: 1140px) {
-    section {
+    /* section {
         padding: 50px 8%;
-    }
+    } */
 
 }
 

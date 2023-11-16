@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keto Diet - Meals</title>
-    <link rel="stylesheet" href="css/daystyle.css">
+    <link rel="stylesheet" href="/styles/daystyle.css">
 </head>
 <body>
+    
+    <%- include('partials/navbar') %>
     
     <div class="menu">
         <div class="heading">
@@ -16,7 +18,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto1.png" alt="keto1">
+            <img src="./images/img/rsz_keto1.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Baked Eggs & Zoodle Bundles</h5>
@@ -25,12 +27,12 @@
                 <p>These zucchini bundles are easy to make and quite satisfying. 
                 Topped with a dollop of pesto-yogurt and an egg, this vegetarian 
                 dish will satisfy any morning craving.</p>
-                <button>View Recipe</button>
+                <a href="/recipe1"><button class="recipe">View Recipe</button></a>
             </div>
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_1keto2.png" alt="keto1">
+            <img src="./images/img/rsz_1keto2.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Keto Breakfast Casserole</h5>
@@ -44,7 +46,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_1keto3.png" alt="keto1">
+            <img src="./images/img/rsz_1keto3.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Keto Pancakes</h5>
@@ -66,7 +68,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto4.png" alt="keto1">
+            <img src="./images/img/rsz_keto4.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Brussels Sprouts Hash</h5>
@@ -80,7 +82,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto5.png" alt="keto1">
+            <img src="./images/img/rsz_keto5.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Avocado Egg Boats</h5>
@@ -94,7 +96,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto6.png" alt="keto1">
+            <img src="./images/img/rsz_keto6.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Garlic Butter Meatballs & Zoodles</h5>
@@ -116,7 +118,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto7.png" alt="keto1">
+            <img src="./images/img/rsz_keto7.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Keto Chicken Parmesan</h5>
@@ -130,7 +132,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto8.png" alt="keto1">
+            <img src="./images/img/rsz_keto8.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Keto Mac & Cheese</h5>
@@ -145,7 +147,7 @@
         </div>
 
         <div class="food-items">
-            <img src="img/rsz_keto9.png" alt="keto1">
+            <img src="./images/img/rsz_keto9.png" alt="keto1">
             <div class="details">
                 <div class="details-sub">
                     <h5>Keto Fried Chicken</h5>
@@ -159,5 +161,16 @@
         </div>
 
     </div>
+
+    <script>
+        function showSidebar() {
+          const sidebar = document.querySelector(".responsive_sidebar");
+          sidebar.style.display = "flex";
+        }
+        function hideSidebar() {
+          const sidebar = document.querySelector(".responsive_sidebar");
+          sidebar.style.display = "none";
+        }
+      </script>
 </body>
 </html>

@@ -200,3 +200,34 @@ app.get("/resetMoods", isLoggedIn, async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+
+// MEAL PLANNING PART //
+
+app.get("/mealfrontpage", (req, res) => {
+  res.render("mealfrontpage");
+});
+
+app.get("/mealplans", (req, res) => {
+  res.render("mealplans");
+});
+
+app.get("/keto", (req, res) => {
+  res.render("keto");
+});
+
+app.get("/weightloss", (req, res) => {
+  res.render("weightloss");
+});
+
+app.get("/lowcarb", (req, res) => {
+  res.render("lowcarb");
+});
+
+app.get("/bulk", (req, res) => {
+  res.render("bulk");
+});
+
+app.get("/recipe1", (req, res) => {
+  res.render("recipe1");
+});

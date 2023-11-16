@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/recipe1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+        <title>Classic Waffer - Recipe</title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <article>
+            <h1>Baked Eggs & Zoodle Bundles</h1>
+                <figure class="recipe-image">
+                    <img src="./images/img/rsz_keto1.png" alt="Baked Eggs & Zoodle Bundles">
+                    <figcaption>Baked Eggs & Zoodle Bundles<figcaption>
+                </figure>
+
+             <!--cooking time --> 
+             <div class="yield">
+                <div class="block">
+                    <h3>YIELD</h3>
+                    <h4>2-4 servings</h4>
+                </div>
+                <div class="block">
+                    <h3>PREP TIME</h3>
+                    <h4>20 min</h4>
+                </div>
+                <div class="block">
+                    <h3>TOTAL TIME</h3>
+                    <h4>45 min</h4>
+                </div>
+
+             </div>
+
+
+            <h2>INGREDIENTES</h2>
+            <div class="instructions">
+                <ul>
+                    <li class="list">1/2 c. plain Greek yogurt</li>
+                    <li class="list">3 tbsp. store-bought or homemade pesto
+                        Kosher salt</li>
+                    <li class="list">1 lb. spiralized zucchini (from about 2 medium zucchini)</li>
+                    <li class="list">2 tbsp. extra-virgin olive oil</li>
+                    <li class="list">Freshly ground black pepper</li>
+                    <li class="list">1/2 c. grape or cherry tomatoes, halved</li>
+                    <li class="list">4 large eggs</li>
+                    <li class="list">2 tsp. grated Parmesan</li>
+                    <li class="list">Torn fresh basil, for serving</li>
+                </ul>
+            </div>
+            <h2>PREPARATION</h2>
+            <div class="instructions">
+                <ol>
+                    <li class="list">Preheat oven to 425º. Spray a rimmed baking sheet with cooking spray.</li>
+                    <li class="list">In a medium bowl, combine yogurt and pesto; season with salt, if desired.</li>
+                    <li class="list">In a large bowl, toss zucchini with oil, 1/2 teaspoon salt, and 1/4 teaspoon pepper. Form zucchini mixture into 4 (5") nests on prepared baking sheet. Divide tomatoes among nests.</li>
+                    <li class="list">Bake 5 minutes, then make a well in the center of each nest. Add a dollop of pesto yogurt, then crack an egg into each well. Sprinkle each egg with a pinch of salt and a grind of pepper.</li>
+                    <li class="list">Continue to bake until zucchini is just tender and eggs are just set with runny yolks, 10 to 12 minutes. Sprinkled with Parmesan and basil.</li>
+                </ol>
+            </div>
+        </article>
+
+        <script>
+            function showSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "flex";
+            }
+            function hideSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "none";
+            }
+          </script>
+        
+    </body>
+</html>
