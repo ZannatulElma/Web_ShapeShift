@@ -7,6 +7,14 @@ body {
     min-height: 100vh;
     min-width: 100vw;
 }
+h2{
+    color:green;
+    font-size: 80px;
+}
+small{
+    color: white;
+    font-size: 50px;
+}
 
 nav {
     background-color: rgb(172, 255, 173);
@@ -109,6 +117,11 @@ nav li:first-child {
     background-size: cover;
     background-position: center;
 }
+.background_img {
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
+}
 .intro_part{
     z-index:2;
     position:absolute;
@@ -116,19 +129,12 @@ nav li:first-child {
    padding-top:100px;
 
 }
-h2{
-    color:green;
-    font-size: 80px;
-}
-small{
-    color: white;
-    font-size: 50px;
-}
 
-.background_img {
-    width: 100vw;
-    position: absolute;
-    z-index: 1;
+.getstartedbtn{
+    font-size:100px;
+    height:20px;
+    background-color: green;
+    padding:10px;
 }
 
 .yoga_img {

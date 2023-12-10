@@ -1,15 +1,28 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Gupter:wght@700&family=Inter&family=Montserrat:wght@400;500;700&family=Poppins:wght@500;600&display=swap');
+
+
 * {
     margin: 0px;
     padding: 0px;
 }
-
+:root{
+    --mintgreen:#cbecb5;
+    --deepmintgreen:#5db570;
+}
 body {
-    min-height: 100vh;
-    min-width: 100vw;
+    /* min-height: 100vh;
+    min-width: 100vw; */
+    background-image:url(/images/rm422-047.jpg);
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
+    overflow-y: scroll;
 }
 
 nav {
-    background-color: rgb(172, 255, 173);
+    background:linear-gradient(to left,#339c50,#5db570,#96eb97);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -23,7 +36,7 @@ nav ul {
 }
 
 nav li {
-    height: 50px;
+    height: 70px;
 
 }
 
@@ -31,8 +44,9 @@ nav li a {
     height: 100%;
     text-decoration: none;
     padding: 0px 30px;
-    color: black;
-    font-size: large;
+    font-family: 'Poppins';
+    color: white;
+    font-size:20px;
     display: flex;
     align-items: center;
 
@@ -116,20 +130,43 @@ nav li:first-child {
    padding-top:100px;
 
 }
+.introbtnpart{
+   margin-top:40px; 
+   margin-left:-6px;
+}
+.getstartedbtn{
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    font-size:18px;
+    height:20px;
+    width:130px;
+    background-color: green;
+    padding:15px;
+    border-radius:25px;
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.8s ease;
+}
+.getstartedbtn:hover{
+    background-color: white;
+    color: green;
+    border: green solid 2px;
+    
+}
 h2{
     color:green;
     font-size: 80px;
 }
+
 small{
     color: white;
     font-size: 50px;
 }
 
-.background_img {
+/* .background_img {
     width: 100vw;
     position: absolute;
-    z-index: 1;
-}
+    z-index: 0;
+} */
 
 .yoga_img {
     position: absolute;
@@ -156,7 +193,7 @@ small{
 
 @keyframes flower {
    0%{
-    transform:translateY(0);
+    transform:translateY(100vh);
     opacity:0;
    } 
    50%{
@@ -164,9 +201,15 @@ small{
    } 
    70%{
     opacity:1;
+   }
+   80%{
+    opacity:1;
    } 
+   90%{
+    opacity:1;
+   }  
    100%{
-    transform:translateY(-100vh);
+    transform:translateY(-250vh);
     opacity:0;
    } 
     
@@ -188,4 +231,88 @@ small{
 }
 .flowerspart img:nth-child(6){
     animation-delay: 6s;
+}
+
+/* css of midpart of landing page*/
+.midpart{
+    margin-top:150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.midpartheading{
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    color: white;
+   opacity: 0;
+   transition:opacity 2s ease,transform 2s ease;
+   transform: translateY(50px);
+    
+}
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.midpartcard{
+    background:linear-gradient(to right,#339c50,#59b46e,#96eb97);
+    margin-top: 20px;
+    height: 250px;
+    width:1000px;
+    padding:15px;
+    display: flex;
+   justify-content:space-between;
+    
+    border-radius: 10px 150px;
+    transition:opacity 2s ease,transform 2s ease;
+    transform: translateX(300px);
+
+}
+.showmidpartcard{
+    opacity: 1;
+    transform: translateX(0);
+}
+.cardimg{
+  background-color: #cbecb5; 
+  border-radius: 150px;
+  margin-right: 10px;
+   
+}
+.cardheading{
+    margin-left: 30px;
+}
+.cardheading h3{
+    margin-top: 25px;
+    font-size: 25px;
+color: white;
+}
+.cardheading h5{
+    margin-top: 30px;
+    font-size: 18px;
+    color: white;
+  
+}
+.midcardbtn{
+    margin-top: 40px;
+    text-align: right;
+    margin-right: 30px;
+}
+.midcardbtn a{
+    /* margin-top: 30px; */
+    text-decoration: none;
+    color: white;
+    font-size:18px;
+    height:20px;
+    width:130px;
+    background-color: green;
+    padding:15px;
+    border-radius:15px;
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.8s ease;
+}
+.midcardbtn a:hover{
+    background-color: white;
+    color: green;
+    border: green solid 2px;
+    
 }

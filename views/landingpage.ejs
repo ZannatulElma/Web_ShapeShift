@@ -1,24 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shapeshift</title>
-    <link rel="stylesheet" href="/styles/landingpage.css" />
-  </head>
 
-  <body>
-    <%- include('partials/navbar') %>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shapeshift</title>
+  <link rel="stylesheet" href="/styles/landingpage.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+  <section class="responsive_navbar">
+    <nav>
+      <ul>
+        <li><a href="/">ShapeShift</a></li>
+        <li class="hideOnMobile"><a href="/">Home</a></li>
+        <li class="hideOnMobile"><a href="#">Workout</a></li>
+        <li class="hideOnMobile">
+          <a href="/mealfrontpage">Meal Planning</a>
+        </li>
+        <li class="hideOnMobile"><a href="#">Meditation</a></li>
+        <li class="hideOnMobile"><a href="/moodtracker">Mood Tracker</a></li>
+        <li class="hideOnMobile"><a href="#">About Us</a></li>
+        <li class="hideOnMobile"><a href="/logout">Logout</a></li>
+        <li class="menubutton" onclick="showSidebar()">
+          <img src="./images/list.png" alt="" />
+        </li>
+      </ul>
+      <ul class="responsive_sidebar">
+        <li onclick="hideSidebar()">
+          <img src="./images/close.png" alt="" />
+        </li>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Workout</a></li>
+        <li><a href="#">Meal Planning</a></li>
+        <li><a href="#">Meditation</a></li>
+        <li><a href="/moodtracker">Mood Tracker</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </section>
 
     <section class="mainpart">
       <div class="headerpart">
         <div class="intro_part">
           <small>let's start with</small>
           <h2>ShapeShift</h2>
+          <h3>Transform your day with a one-stop hub for mood-tracking, <br>workout planning, and meal prepping!<br>
+            Let's
+            rev up your day! What's on your agenda today?</h3>
+          <div class="introbtnpart"> <a class="getstartedbtn" href="">Get Started
+              <i class="bi bi-arrow-right"></i>
+            </a></div>
+
+
+
+
         </div>
-        <img class="background_img" src="./images/rm422-047.jpg" alt="" />
+
+
         <img class="yoga_img" src="./images/meditation (1).png" alt="" />
         <div class="flowerspart">
+          <img src="./images/daisy.png" alt="" />
+          <img src="./images/daisy.png" alt="" />
           <img src="./images/daisy.png" alt="" />
           <img src="./images/daisy.png" alt="" />
           <img src="./images/daisy.png" alt="" />
@@ -28,6 +74,55 @@
         </div>
       </div>
     </section>
+    <section class="midpart" id="midpart">
+      <div class="midpartheading">
+        Why Choose ShapeShift?</div>
+      <div class="midpartcard">
+        <span class="cardheading">
+          <h3>Prep, Eat, Repeat: Healthy Made Easy!</h3>
+          <h5>"With ShapeShift, tailor your meal plans effortlessly. Lose weight, gain strength, or embrace wellness —
+            all personalized to your goals, transforming your diet journey into a seamless experience."</h5>
+          <div class="midcardbtn"> <a href="">Let's Cook
+              <i class="bi bi-arrow-right"></i>
+            </a></div>
+
+        </span>
+        <div class="cardimg">
+          <img src="/images/eating.png" alt="">
+        </div>
+      </div>
+      <div class="midpartcard">
+        <span class="cardheading">
+          <h3>Track, Understand, Elevate:Empower Your Mood!</h3>
+          <h5>
+            "Engage with ShapeShift's Mood Tracker: Explore 7 days of your mood's story. Unlock personalized insights and interactive tips, uplifting your spirits for a brighter tomorrow."</h5>
+          <div class="midcardbtn"> <a href="">Track Mood
+              <i class="bi bi-arrow-right"></i>
+            </a></div>
+
+        </span>
+        <div class="cardimg">
+          <img src="/images/mood.png" alt="">
+        </div>
+      </div>
+      <div class="midpartcard">
+        <span class="cardheading">
+          <h3>Track,Tone,Transform-Your Workout Companion!</h3>
+          <span>
+            "ShapeShift's BMI tracker monitors your progress, guiding personalized exercises for weight goals—shedding, gaining, or maintaining. Tailored workouts empower your journey, making fitness intuitive and rewarding."</span>
+          <div class="midcardbtn"> <a href="">Begin Exercise
+              <i class="bi bi-arrow-right"></i>
+            </a></div>
+
+        </span>
+        <div class="cardimg">
+          <img src="/images/bike-.png" alt="">
+        </div>
+      </div>
+
+
+    </section>
+
 
     <script>
       function showSidebar() {
@@ -38,6 +133,27 @@
         const sidebar = document.querySelector(".responsive_sidebar");
         sidebar.style.display = "none";
       }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+          if (entry.isIntersecting) {
+            entry.target.classList.add('showmidpartcard');
+          } else {
+            entry.target.classList.remove('showmidpartcard');
+          }
+        });
+      }, { threshold: 0.5 });
+      const hiddenElements = document.querySelectorAll('.midpartheading,.midpartcard'); // Use querySelectorAll
+      hiddenElements.forEach((el) => observer.observe(el));
+
+
+
     </script>
-  </body>
+</body>
+
 </html>
