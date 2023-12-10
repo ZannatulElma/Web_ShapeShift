@@ -202,7 +202,7 @@ app.listen(port, () => {
 });
 
 
-// MEAL PLANNING PART //
+// MEAL PLANNING PART START //
 
 app.get("/mealfrontpage", (req, res) => {
   res.render("mealfrontpage");
@@ -231,3 +231,22 @@ app.get("/bulk", (req, res) => {
 app.get("/recipe1", (req, res) => {
   res.render("recipe1");
 });
+
+app.get("/recipe1", (req, res) => {
+  res.render("recipe1");
+});
+
+app.get("/recipe2", (req, res) => {
+  res.render("recipe2");
+});
+
+app.get("/recipe3", (req, res) => {
+  res.render("recipe3");
+});
+
+app.get("/recipe4", (req, res) => {
+  res.render("recipe4");
+});
+
+// MEAL PLANNING PART END //
+

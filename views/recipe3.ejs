@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/recipe1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+        <title>Classic Waffer - Recipe</title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <article>
+            <h1>Keto Pancakes</h1>
+                <figure class="recipe-image">
+                    <img src="./images/img/rsz_1keto3.png" alt="Keto Pancakes">
+                    <figcaption>Keto Pancakes<figcaption>
+                </figure>
+
+             <!--cooking time --> 
+             <div class="yield">
+                <div class="block">
+                    <h3>YIELD</h3>
+                    <h4>10 servings</h4>
+                </div>
+                <div class="block">
+                    <h3>PREP TIME</h3>
+                    <h4>5 min</h4>
+                </div>
+                <div class="block">
+                    <h3>TOTAL TIME</h3>
+                    <h4>15 min</h4>
+                </div>
+
+             </div>
+
+
+            <h2>INGREDIENTES</h2>
+            <div class="instructions">
+                <ul>
+                    <li class="list">1/2 c. almond flour</li>
+                    <li class="list">4 oz. cream cheese, softened</li>
+                    <li class="list">4 large eggs</li>
+                    <li class="list">1 tsp. lemon zest</li>
+                    <li class="list">Butter, for frying and serving</li>
+                </ul>
+            </div>
+            <h2>PREPARATION</h2>
+            <div class="instructions">
+                <ol>
+                    <li class="list">In a medium bowl, whisk together almond flour, cream cheese, eggs, and lemon zest until smooth.</li>
+                    <li class="list">In a nonstick skillet over medium-low heat, melt 1 tablespoon butter. Pour in about 3 tablespoons batter and cook until golden, 2 minutes. Flip and cook 2 minutes more. Transfer to a plate and repeat with remaining batter.</li>
+                    <li class="list">Serve topped with butter.</li>
+                </ol>
+            </div>
+        </article>
+
+        <script>
+            function showSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "flex";
+            }
+            function hideSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "none";
+            }
+          </script>
+        
+    </body>
+</html>

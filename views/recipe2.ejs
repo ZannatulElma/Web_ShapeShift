@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/recipe1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+        <title>Classic Waffer - Recipe</title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <article>
+            <h1>Keto Breakfast Casserole</h1>
+                <figure class="recipe-image">
+                    <img src="./images/img/rsz_1keto2.png" alt="Baked Eggs & Zoodle Bundles">
+                    <figcaption>Keto Breakfast Casserole<figcaption>
+                </figure>
+
+             <!--cooking time --> 
+             <div class="yield">
+                <div class="block">
+                    <h3>YIELD</h3>
+                    <h4>6-8 servings</h4>
+                </div>
+                <div class="block">
+                    <h3>PREP TIME</h3>
+                    <h4>10 min</h4>
+                </div>
+                <div class="block">
+                    <h3>TOTAL TIME</h3>
+                    <h4>1 hour 30 min</h4>
+                </div>
+
+             </div>
+
+
+            <h2>INGREDIENTES</h2>
+            <div class="instructions">
+                <ul>
+                    <li class="list">Butter, for greasing baking dish</li>
+                    <li class="list">2 tbsp. olive oil </li>
+                    <li class="list">1 lb. bulk sweet Italian sausage</li>
+                    <li class="list">1 large clove garlic, minced</li>
+                    <li class="list">Kosher salt</li>
+                    <li class="list">1 bunch broccoli rabe, tough stems trimmed</li>
+                    <li class="list">4 oz. Fontina cheese, grated</li>
+                    <li class="list">12 eggs</li>
+                    <li class="list">1 1/2 c. heavy cream or half & half</li>
+                    <li class="list">1/4 c. basil leaves, finely sliced</li>
+                    <li class="list">1/4 tsp. freshly ground black pepper</li>
+                    <li class="list">1/8 tsp. ground nutmeg</li>
+                </ul>
+            </div>
+            <h2>PREPARATION</h2>
+            <div class="instructions">
+                <ol>
+                    <li class="list">Adjust an oven rack to middle position. Preheat the oven to 350° and grease a 9” x 13” baking dish with butter.</li>
+                    <li class="list">In a large skillet over medium heat, heat oil. Cook sausage, breaking up with a spoon, until golden and cooked through,
+                         about 8 minutes. Transfer to a large bowl, and mix in the garlic.</li>
+                    <li class="list">Meanwhile, bring a medium pot of water to a boil, and season the water with 2 tablespoons salt. Blanch the broccoli rabe
+                         until tender, about 4 minutes. Drain and let cool. Using a kitchen towel, squeeze broccoli rabe to remove excess water.  Transfer to
+                          a cutting board, and chop into ½” pieces. Add the broccoli rabe to the bowl, and mix until combined.</li>
+                    <li class="list">Transfer the mixture to the baking dish. Sprinkle the cheese over the top. </li>
+                    <li class="list">In a large bowl, whisk eggs, heavy cream, basil, 1½ teaspoons salt, pepper and nutmeg. Pour egg mixture into the baking dish.</li>
+                    <li class="list">Bake until just set in the center, 45 to 55 minutes. Let cool for 15 minutes before cutting into squares.</li>
+                </ol>
+            </div>
+        </article>
+
+        <script>
+            function showSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "flex";
+            }
+            function hideSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "none";
+            }
+          </script>
+        
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/recipe1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+        <title>Classic Waffer - Recipe</title>
+    </head>
+    <body>
+        <%- include('partials/navbar') %>
+
+        <article>
+            <h1>Avocado Egg Boats</h1>
+                <figure class="recipe-image">
+                    <img src="./images/img/rsz_keto5.png" alt="Avocado Egg Boats">
+                    <figcaption>Avocado Egg Boats<figcaption>
+                </figure>
+
+             <!--cooking time --> 
+             <div class="yield">
+                <div class="block">
+                    <h3>YIELD</h3>
+                    <h4>4 servings</h4>
+                </div>
+                <div class="block">
+                    <h3>PREP TIME</h3>
+                    <h4>10 min</h4>
+                </div>
+                <div class="block">
+                    <h3>TOTAL TIME</h3>
+                    <h4>40 min</h4>
+                </div>
+
+             </div>
+
+
+            <h2>INGREDIENTES</h2>
+            <div class="instructions">
+                <ul>
+                    <li class="list">2 ripe avocados, halved and pitted</li>
+                    <li class="list">4 large eggs</li>
+                    <li class="list">Kosher salt</li>
+                    <li class="list">Freshly ground black pepper</li>
+                    <li class="list">3 slices bacon</li>
+                    <li class="list">Freshly chopped chives, for garnish</li>
+                </ul>
+            </div>
+            <h2>PREPARATION</h2>
+            <div class="instructions">
+                <ol>
+                    <li class="list">Preheat oven to 350°. Scoop about 1 tablespoon worth of avocado out of each half; discard or reserve for another use.</li>
+                    <li class="list">Place hollowed avocados in a baking dish, then crack eggs into a bowl, one at a time. Using a spoon, transfer one yolk to each avocado half, then spoon in as much egg white as you can fit without spilling over.</li>
+                    <li class="list">Season with salt and pepper and bake until whites are set and yolks are no longer runny, 20 to 25 minutes. (Cover with foil if avocados are beginning to brown.)</li>
+                    <li class="list">Meanwhile, in a large skillet over medium heat, cook bacon until crisp, 8 minutes, then transfer to a paper towel-lined plate and chop.</li>
+                    <li class="list">Top avocados with bacon and chives before serving.</li>
+                </ol>
+            </div>
+        </article>
+
+        <script>
+            function showSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "flex";
+            }
+            function hideSidebar() {
+              const sidebar = document.querySelector(".responsive_sidebar");
+              sidebar.style.display = "none";
+            }
+          </script>
+        
+    </body>
+</html>
