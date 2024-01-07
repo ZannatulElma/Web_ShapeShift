@@ -1,0 +1,9 @@
+body {
+    background-color: lightgreen;
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
+    overflow-y: scroll;
+
+}

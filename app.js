@@ -268,21 +268,22 @@ const getBMICategory = (bmi) => {
 };
 
 // Calculate BMI function
-const calculateBMI = (height, weight) => {
+const calculateBMI = (req,height, weight) => {
   const heightInMeters = height / 100;
   const bmi = weight / (heightInMeters * heightInMeters);
   const category = getBMICategory(bmi);
+   // Save the BMI in the session for later use
+   req.session.userBMI = { bmi: bmi.toFixed(2), category };
   return { bmi: bmi.toFixed(2), category };
 };
 // Route to handle BMI calculation (POST request)
 // Route to handle BMI calculation (POST request)
 app.post("/bmi/calculate", isLoggedIn, async (req, res) => {
-  // Handle BMI calculation here using the submitted data
   const { height, weight } = req.body;
   const userId = req.session.user._id;
-  const { bmi, category } = calculateBMI(height, weight);
 
   try {
+    const { bmi, category } = calculateBMI(req, height, weight);
     const newBMI = new BMI({
       user: userId,
       height: parseFloat(height),
@@ -293,12 +294,18 @@ app.post("/bmi/calculate", isLoggedIn, async (req, res) => {
 
     await newBMI.save();
 
-    // Render the 'calculate_bmi' page with BMI data
-    res.render("calculate_bmi", { bmi: { bmi, category } });
+    // Store BMI data in session
+    req.session.userBMI = { bmi: bmi, category: category };
+
+    res.render("calculate_bmi", {
+      bmi: { bmi: bmi, category: category },
+      showButton: true,
+    });
   } catch (error) {
     res.status(500).json({ error: "Failed to calculate and save BMI data" });
   }
 });
+
 
 // // View the latest BMI for a user
 // app.get("/view_bmi", isLoggedIn, (req, res) => {
@@ -357,7 +364,50 @@ app.get("/bmi/history/all", isLoggedIn, async (req, res) => {
     res.status(500).send("Failed to fetch BMI history");
   }
 });
-// ... (existing code)
+
+//exercise recommendation system
+// Add a new route for exercise recommendations
+// Function to extract video ID from YouTube URL
+function getVideoIdFromUrl(url) {
+  const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+  const match = url.match(regex);
+  
+  if (match && match[1]) {
+    return match[1]; // Extracted video ID
+  } else {
+    return null; // No valid video ID found
+  }
+}
+app.get("/exercise_plan", isLoggedIn, (req, res) => {
+  const userBMI = req.session.userBMI;
+  let exerciseRecommendations = [];
+
+  if (userBMI && userBMI.category === 'Underweight') {
+    exerciseRecommendations = [
+      {
+        category: 'Underweight',
+        exercises: [
+          {
+            name: 'Underweight Cardio Exercise 1',
+            // videoUrl: 'https://youtu.be/YvrKIQ_Tbsk?si=UJhrzidcTDxvkcUU',
+            videoId:getVideoIdFromUrl('https://youtu.be/YvrKIQ_Tbsk?si=UJhrzidcTDxvkcUU'),
+          },
+          {
+            name: 'Underweight Cardio Exercise 2',
+            videoId:getVideoIdFromUrl('https://youtu.be/FDpM-CGMXcw?si=14hoJv7MXhsct5St'),
+          },
+          // Add more exercises for the 'Underweight' category
+        ],
+      },
+      // Add more categories if needed
+    ];
+  }
+
+  res.render("exercise_plan", { exerciseRecommendations });
+});
+
+
+
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
