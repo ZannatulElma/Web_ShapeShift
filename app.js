@@ -28,7 +28,7 @@ app.use(
 const User = require("./models/userModel");
 const Mood = require("./models/moodModel");
 const moodsArr = Mood.schema.path("mood").enumValues;
-
+const BMI = require("./models/bmiModel");
 //isLoggedIn
 const isLoggedIn = (req, res, next) => {
   if (req.session.isLoggedIn) {
@@ -197,9 +197,6 @@ app.get("/resetMoods", isLoggedIn, async (req, res) => {
   res.redirect("/moodtracker");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
 
 
 // MEAL PLANNING PART START //
@@ -250,3 +247,118 @@ app.get("/recipe4", (req, res) => {
 
 // MEAL PLANNING PART END //
 
+//bmi tracker part//
+// app.get("/bmi/calculate", isLoggedIn, (req, res) => {
+// res.render("calculate_bmi");
+// });
+
+// Route to display the BMI calculator form
+app.get("/calculate_bmi", isLoggedIn, (req, res) => {
+  res.render("calculate_bmi", { bmi: null });
+});
+// BMI Categories
+const getBMICategory = (bmi) => {
+  if (bmi < 18.5) {
+    return 'Underweight';
+  } else if (bmi >= 18.5 && bmi < 25) {
+    return 'Normal weight';
+  } else {
+    return 'Overweight';
+  }
+};
+
+// Calculate BMI function
+const calculateBMI = (height, weight) => {
+  const heightInMeters = height / 100;
+  const bmi = weight / (heightInMeters * heightInMeters);
+  const category = getBMICategory(bmi);
+  return { bmi: bmi.toFixed(2), category };
+};
+// Route to handle BMI calculation (POST request)
+// Route to handle BMI calculation (POST request)
+app.post("/bmi/calculate", isLoggedIn, async (req, res) => {
+  // Handle BMI calculation here using the submitted data
+  const { height, weight } = req.body;
+  const userId = req.session.user._id;
+  const { bmi, category } = calculateBMI(height, weight);
+
+  try {
+    const newBMI = new BMI({
+      user: userId,
+      height: parseFloat(height),
+      weight: parseFloat(weight),
+      bmi: bmi,
+      category: category,
+    });
+
+    await newBMI.save();
+
+    // Render the 'calculate_bmi' page with BMI data
+    res.render("calculate_bmi", { bmi: { bmi, category } });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to calculate and save BMI data" });
+  }
+});
+
+// // View the latest BMI for a user
+// app.get("/view_bmi", isLoggedIn, (req, res) => {
+//   const userId = req.session.user._id;
+
+//   BMI.findOne({ user: userId })
+//     .sort({ _id: -1 }) // Sort by descending order to get the latest BMI record
+//     .then((latestBMI) => {
+//       res.render("view_bmi", { latestBMI });
+//     }).catch((error) => {
+//       res.status(500).json({ error: "Failed to fetch latest BMI data" });
+//     });
+// });
+
+// View all BMI records for a user
+// app.get("/bmi/history", isLoggedIn, (req, res) => {
+//   const userId = req.session.user._id;
+
+//   BMI.find({ user: userId })
+//     .sort({ _id: -1 }) // Sort by descending order to get the latest BMI record first
+//     .then((allBMIRecords) => {
+//       res.json({ allBMIRecords });
+//     }).catch((error) => {
+//       res.status(500).json({ error: "Failed to fetch BMI history" });
+//     });
+// });
+
+
+
+
+// // Route to display the latest BMI and option to view history
+// app.get("/bmi/latest", isLoggedIn, (req, res) => {
+//   const userId = req.session.user._id;
+
+//   BMI.findOne({ user: userId })
+//     .sort({ _id: -1 })
+//     .then((latestBMI) => {
+//       res.render("view_bmi", { latestBMI });
+//     }).catch((error) => {
+//       res.render("view_bmi", { latestBMI: null });
+//     });
+// });
+
+// Route to display the entire BMI history for a user
+app.get("/bmi/history/all", isLoggedIn, async (req, res) => {
+  const userId = req.session.user._id;
+
+  try {
+    // Fetch the last 5 BMI records for the user
+    const last5BMIRecords = await BMI.find({ user: userId })
+      .sort({ _id: -1 })
+      .limit(5);
+
+    res.render("view_bmi_history_all", { allBMIRecords: last5BMIRecords });
+  } catch (error) {
+    res.status(500).send("Failed to fetch BMI history");
+  }
+});
+// ... (existing code)
+
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
+});

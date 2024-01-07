@@ -1,0 +1,26 @@
+<!-- view_bmi_history_all.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI History</title>
+</head>
+<body>
+  <h1>BMI History</h1>
+  <% if (allBMIRecords.length > 0) { %>
+    <ul>
+      <% allBMIRecords.forEach((record) => { %>
+        <li>
+          Date: <%= record.date %> |
+          BMI: <%= record.bmi %> |
+          Category: <%= record.category %> |
+          Height: <%= record.height %> |
+          Weight: <%= record.weight %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No BMI records found.</p>
+  <% } %>
+  <a href="/calculate_bmi"><button>Calculate BMI</button></a>
+</body>
+</html>
