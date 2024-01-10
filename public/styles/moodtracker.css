@@ -1,9 +1,10 @@
 body {
-  /* font-family: "Roboto", sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #DBE2EF; */
   background-color: #e4e4e4;
-
+  background-image: url('/images/background_mood.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   margin: 0;
   padding: 0;
 }
@@ -16,14 +17,15 @@ body {
 }
 
 .mood-today {
-  background-color: #f4f4f4;
+  background-color: #5db570;
+  opacity: 0.9;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 30px;
   padding: 3rem;
-  width: 80%;
+  width: 60%;
   margin: 2rem 0;
 }
 
@@ -76,7 +78,7 @@ body {
 }
 
 .submit-button {
-  background-color: #3f72af;
+  background-color:  #00771c;;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -111,7 +113,7 @@ h2 {
 .reset-moods-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #d60e0e;
+  background-color: #00771c;
   color: #fff;
   text-decoration: none;
   border: none;
@@ -122,5 +124,5 @@ h2 {
 }
 
 .reset-moods-button:hover {
-  background-color: #ff0101;
+  background-color: #70ea72;
 }

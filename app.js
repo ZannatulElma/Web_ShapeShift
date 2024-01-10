@@ -125,29 +125,29 @@ app.get("/moodtracker", isLoggedIn, async (req, res) => {
   // Logic to determine recommendations based on mood counts
   if (moodCounts.sad > 3) {
     recommendedVideo =
-      "https://www.youtube.com/embed/dQw4w9WgXcQ?si=HM19UgfNpv1roDWR";
+      "https://www.youtube.com/embed/HM7oTRPwtUQ?si=oEds1lMHD9-AfplZ";
     recommendedQuote =
-      "You must be the change you wish to see in the world. -Mahatma Gandhi";
+      "Cheer up, buttercup. Storms don't last forever."
   } else if (moodCounts.angry > 3) {
     recommendedVideo =
-      "https://www.youtube.com/embed/dQw4w9WgXcQ?si=HM19UgfNpv1roDWR";
+      "https://www.youtube.com/embed/wkse4PPxkk4?si=llZh25at3PtpBQkG";
     recommendedQuote =
-      "You must be the change you wish to see in the world. -Mahatma Gandhi";
+      "Holding on to anger is like grasping a hot coal with the intent of throwing it at someone else; you are the one who gets burned";
   } else if (moodCounts.happy > 3) {
     recommendedVideo =
-      "https://www.youtube.com/embed/dQw4w9WgXcQ?si=HM19UgfNpv1roDWR";
+      "https://www.youtube.com/embed/K9I4twkMlpo?si=ytIIbOif3nKTrfrN";
     recommendedQuote =
-      "You must be the change you wish to see in the world. -Mahatma Gandhi";
+      "Happiness is a warm puppy";
   } else if (moodCounts.neutral > 3) {
     recommendedVideo =
-      "https://www.youtube.com/embed/dQw4w9WgXcQ?si=HM19UgfNpv1roDWR";
+      "https://www.youtube.com/embed/ez3GgRqhNvA?si=Elq2TJRe3PV8skgg";
     recommendedQuote =
-      "You must be the change you wish to see in the world. -Mahatma Gandhi";
+      "Today, may we make every moment count, and then we'll see that we have turned a normal day into a spectacular one!";
   } else {
     recommendedVideo =
-      "https://www.youtube.com/embed/dQw4w9WgXcQ?si=HM19UgfNpv1roDWR";
+    "https://www.youtube.com/embed/0FR0r0yaG6s?si=vHO3Xji__1Q08WGW";
     recommendedQuote =
-      "You must be the change you wish to see in the world. -Mahatma Gandhi";
+      "Never regret anything that made you smile";
   }
 
   res.render("moodtracker", {
@@ -246,6 +246,16 @@ app.get("/recipe4", (req, res) => {
 });
 
 // MEAL PLANNING PART END //
+
+app.get('/meditation', (req, res) => {
+  res.render('meditation', {
+      pageTitle: 'Mindful Meditation',
+      headerText: 'Welcome to Mindful Meditation',
+      guidedMeditations: [
+          // Array of meditation objects
+      ]
+  });
+});
 
 //bmi tracker part//
 // app.get("/bmi/calculate", isLoggedIn, (req, res) => {
