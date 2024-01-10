@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Plan</title>
 </head>
+
 <body>
     <h1>Exercise Plan</h1>
     <% if (exerciseRecommendations.length === 0) { %>
@@ -13,14 +15,27 @@
         <% exerciseRecommendations.forEach((category) => { %>
             <% if (category.category === 'Underweight') { %>
                 <h2><%= category.category %></h2>
-                <% category.exercises.forEach((exercise) => { %>
-                    <h3><%= exercise.category %> - <%= exercise.name %></h3>
-                    <!-- Use the YouTube iframe embed code -->
-                    <!-- Use the YouTube iframe embed code dynamically -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= exercise.videoId %>?si=UJhrzidcTDxvkcUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <!-- Add this button to navigate to the Underweight Diet Recipes page -->
+                <a href="/underweight_diet_recipes"><button>Underweight Diet Recipes</button></a>
+
+                <% Object.keys(category.exercises).forEach((subcategory) => { %>
+                    <h3><%= subcategory %></h3>
+                    <% category.exercises[subcategory].forEach((exercise) => { %>
+                        <h4><%= exercise.name %></h4>
+                        <!-- Use the YouTube iframe embed code -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= exercise.videoId %>?"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    <% }) %>
                 <% }) %>
             <% } %>
         <% }) %>
     <% } %>
 </body>
+
+
 </html>
+
+
+

@@ -268,12 +268,12 @@ const getBMICategory = (bmi) => {
 };
 
 // Calculate BMI function
-const calculateBMI = (req,height, weight) => {
+const calculateBMI = (req, height, weight) => {
   const heightInMeters = height / 100;
   const bmi = weight / (heightInMeters * heightInMeters);
   const category = getBMICategory(bmi);
-   // Save the BMI in the session for later use
-   req.session.userBMI = { bmi: bmi.toFixed(2), category };
+  // Save the BMI in the session for later use
+  req.session.userBMI = { bmi: bmi.toFixed(2), category };
   return { bmi: bmi.toFixed(2), category };
 };
 // Route to handle BMI calculation (POST request)
@@ -371,13 +371,14 @@ app.get("/bmi/history/all", isLoggedIn, async (req, res) => {
 function getVideoIdFromUrl(url) {
   const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
   const match = url.match(regex);
-  
+
   if (match && match[1]) {
     return match[1]; // Extracted video ID
   } else {
     return null; // No valid video ID found
   }
 }
+// Inside the /exercise_plan route
 app.get("/exercise_plan", isLoggedIn, (req, res) => {
   const userBMI = req.session.userBMI;
   let exerciseRecommendations = [];
@@ -386,18 +387,31 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
     exerciseRecommendations = [
       {
         category: 'Underweight',
-        exercises: [
-          {
-            name: 'Underweight Cardio Exercise 1',
-            // videoUrl: 'https://youtu.be/YvrKIQ_Tbsk?si=UJhrzidcTDxvkcUU',
-            videoId:getVideoIdFromUrl('https://youtu.be/YvrKIQ_Tbsk?si=UJhrzidcTDxvkcUU'),
-          },
-          {
-            name: 'Underweight Cardio Exercise 2',
-            videoId:getVideoIdFromUrl('https://youtu.be/FDpM-CGMXcw?si=14hoJv7MXhsct5St'),
-          },
-          // Add more exercises for the 'Underweight' category
-        ],
+        exercises: {
+          abs: [
+            {
+              name: 'Underweight Arms Exercise 1',
+              videoId: getVideoIdFromUrl('https://youtu.be/4zlExQedFt0?si=20mFoWtrMeZ_rsI0'),
+
+            },
+            // Add more abs exercises as needed
+          ],
+          legs: [
+            {
+              name: 'Underweight Legs Exercise 1',
+              videoId: getVideoIdFromUrl('https://youtu.be/ARMS_EXERCISE_2_VIDEO_URL'),
+            },
+            // Add more legs exercises as needed
+          ],
+          arms: [
+            {
+              name: 'Underweight Arms Exercise 1',
+              videoId: 'VIDEO_ID_HERE',
+            },
+            // Add more arms exercises as needed
+          ],
+          // Add more categories or exercises if needed
+        },
       },
       // Add more categories if needed
     ];
@@ -405,10 +419,12 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
 
   res.render("exercise_plan", { exerciseRecommendations });
 });
+  // New route for underweight diet recipes
+  app.get("/underweight_diet_recipes", isLoggedIn, (req, res) => {
+    res.render("bulk"); // Render the Underweight Diet Recipes page
+  });
 
 
-
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+  app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  });
