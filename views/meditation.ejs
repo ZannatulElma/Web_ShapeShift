@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/meditation.css" />
+    <title>ShapeShift</title>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="content">
+      <section class="meditation-images">
+          <div class="card">
+              <img src="/images/yoga1" alt="Meditation Image 1">
+              <div class="card-text"> Upward-Facing </div>
+              <p><b>The pose helps to :</b>
+                <ul style="list-style-type:disc;">
+                  <li>Stretch the chest  muscles </li>
+                  <li>Strengthen the shoulders</li>
+                  <li>Open the heart and lift the head</li>
+                 <li>Improve posture</li>
+             
+                </ul> </p>
+          </div>
+          <div class="card">
+              <img src="/images/yoga2" alt="Meditation Image 2">
+              <div class="card-text">Warrior III</div>
+              <p><b>The pose helps to :</b>
+                <ul style="list-style-type:disc;">
+                  <li>Creates stability in the whole body </li>
+                  <li>Strengthens the small stabilizing muscles in the feet and ankles</li>
+                  <li>Teaches the activation of the bandhas for stability and lightness</li>
+                 <li>Improve posture</li>
+             
+                </ul> </p>
+          </div>
+          <div class="card">
+              <img src="/images/yoga3" alt="Meditation Image 3">
+              <div class="card-text">Boat Pose</div>
+              <p><b>The pose helps to :</b>
+                <ul style="list-style-type:disc;">
+                  <li>Strengthens the abdominal muscles </li>
+                  <li>Mental focus</li>
+                  <li>Stretches your hamstrings</li>
+                 <li>Improve posture</li>
+             
+                </ul> </p>
+          </div>
+      </section>
+
+        <section class="meditation-timer">
+            <h2>Meditation Timer</h2>
+            <div id="timer-display">00:00:00</div>
+            <button id="start-timer">Start</button>
+            <button id="stop-timer">Stop</button>
+            <button id="reset-timer">Reset</button>
+        </section>
+    </div>
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          let timer;
+          let timeElapsedInSeconds = 0;
+          const display = document.getElementById('timer-display');
+
+          function updateTime() {
+              const hours = Math.floor(timeElapsedInSeconds / 3600);
+              const minutes = Math.floor((timeElapsedInSeconds % 3600) / 60);
+              const seconds = timeElapsedInSeconds % 60;
+
+              display.textContent = 
+                  `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+          }
+
+          document.getElementById('start-timer').addEventListener('click', () => {
+              if (!timer) {
+                  timer = setInterval(() => {
+                      timeElapsedInSeconds++;
+                      updateTime();
+                  }, 1000);
+              }
+          });
+
+          document.getElementById('stop-timer').addEventListener('click', () => {
+              clearInterval(timer);
+              timer = null;
+          });
+
+          document.getElementById('reset-timer').addEventListener('click', () => {
+              clearInterval(timer);
+              timer = null;
+              timeElapsedInSeconds = 0;
+              updateTime();
+          });
+      });
+  </script>
+</body>
+</html>
