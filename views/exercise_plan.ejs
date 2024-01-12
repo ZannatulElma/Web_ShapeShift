@@ -1,3 +1,4 @@
+<!-- Your exercise_plan.ejs file -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercise Plan</title>
+    <link rel="stylesheet" href="/styles/exercise_plan.css">
 </head>
 
 <body>
@@ -13,29 +15,47 @@
         <p>No exercises found for this category.</p>
     <% } else { %>
         <% exerciseRecommendations.forEach((category) => { %>
-            <% if (category.category === 'Underweight') { %>
+            <!-- Add a class based on the category -->
+            <div class="category-container <%= category.category.toLowerCase() %>">
                 <h2><%= category.category %></h2>
                 <!-- Add this button to navigate to the Underweight Diet Recipes page -->
-                <a href="/underweight_diet_recipes"><button>Underweight Diet Recipes</button></a>
+                <% if (category.category === 'Underweight') { %>
+                    <a href="/underweight_diet_recipes"><button>Underweight Diet Recipes</button></a>
+                <% } else if (category.category === 'Overweight') { %>
+                    <a href="/overweight_diet_recipes"><button>Overweight Diet Recipes</button></a>
+                    <a href="/weightloss_diet_recipes"><button>Weightloss Diet Recipes</button></a>
+                <% } else if (category.category === 'Normal weight') { %>
+                    <a href="/keto_diet_recipes"><button>Keto Diet Recipes</button></a>
+                    <a href="/lowcarb_diet_recipes"><button>Lowcarb Diet Recipes</button></a>
+                <% } %>
 
                 <% Object.keys(category.exercises).forEach((subcategory) => { %>
-                    <h3><%= subcategory %></h3>
-                    <% category.exercises[subcategory].forEach((exercise) => { %>
-                        <h4><%= exercise.name %></h4>
-                        <!-- Use the YouTube iframe embed code -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= exercise.videoId %>?"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
-                    <% }) %>
+                    <div class="exercise-item">
+                        <div class="exercise_area_headings">
+                            <h3><%= subcategory %></h3>
+                        </div>
+                        <div class="exercise_name_video">
+                            <% category.exercises[subcategory].forEach((exercise) => { %>
+                                <div class="exercise_name_video_separate">
+                                    <div class="exercise_name_headings">
+                                        <h4><%= exercise.name %></h4>
+                                    </div>
+                                    <!-- Use the YouTube iframe embed code -->
+                                    <div class="video_container">
+                                        <div class="videos"><iframe width="300" height="200"
+                                                src="https://www.youtube.com/embed/<%= exercise.videoId %>?"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                allowfullscreen></iframe></div>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
                 <% }) %>
-            <% } %>
+            </div>
         <% }) %>
     <% } %>
 </body>
 
-
 </html>
-
-
-

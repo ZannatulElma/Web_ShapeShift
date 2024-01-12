@@ -389,6 +389,7 @@ function getVideoIdFromUrl(url) {
   }
 }
 // Inside the /exercise_plan route
+// Inside the /exercise_plan route
 app.get("/exercise_plan", isLoggedIn, (req, res) => {
   const userBMI = req.session.userBMI;
   let exerciseRecommendations = [];
@@ -400,39 +401,553 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
         exercises: {
           abs: [
             {
-              name: 'Underweight Arms Exercise 1',
-              videoId: getVideoIdFromUrl('https://youtu.be/4zlExQedFt0?si=20mFoWtrMeZ_rsI0'),
-
+              name: 'Crunches',
+              videoId: getVideoIdFromUrl('https://youtu.be/0t4t3IpiEao?si=PuzMl-BLzosds6gK'),
             },
-            // Add more abs exercises as needed
+            {
+              name: 'Leg raises',
+              videoId: getVideoIdFromUrl('https://youtu.be/RuIdJSVTKO4?si=QYGDF5vOFnOMQ-uP'),
+            },
+            {
+              name: 'Russian twists',
+              videoId: getVideoIdFromUrl('https://youtu.be/DJQGX2J4IVw?si=-v9TAcOLGek4HJvk'),
+            },
+            {
+              name: 'Mountain climbers',
+              videoId: getVideoIdFromUrl('https://youtu.be/cnyTQDSE884?si=xWFwr7uyjym0rGsu'),
+            },
+            {
+              name: 'Plank',
+              videoId: getVideoIdFromUrl('https://youtu.be/6LqqeBtFn9M?si=sE7IECJIEXndi9EC'),
+            },
+            {
+              name: 'Hanging leg raises',
+              videoId: getVideoIdFromUrl('https://youtu.be/Voa4JvQ76A8?si=UiZv0VSwf76S60IJ'),
+            },
           ],
           legs: [
             {
-              name: 'Underweight Legs Exercise 1',
-              videoId: getVideoIdFromUrl('https://youtu.be/ARMS_EXERCISE_2_VIDEO_URL'),
+              name: 'Calf raises',
+              videoId: getVideoIdFromUrl('https://youtu.be/c5Kv6-fnTj8?si=vTymlms4tpy8es6D'),
             },
-            // Add more legs exercises as needed
+            {
+              name: 'Box jumps',
+              videoId: getVideoIdFromUrl('https://youtu.be/52r_Ul5k03g?si=KptJ389cH3aPQWwT'),
+            },
+            {
+              name: 'Hamstring curls',
+              videoId: getVideoIdFromUrl('https://youtu.be/XkESHgkTdFw?si=U5QfP6PxubbsNpzi'),
+            },
+            {
+              name: 'Squat',
+              videoId: getVideoIdFromUrl('https://youtu.be/YaXPRqUwItQ?si=ST3HtJi598EooDJt'),
+            },
+            {
+              name: 'Lunges',
+              videoId: getVideoIdFromUrl('https://youtu.be/wrwwXE_x-pQ?si=X0YgEf-CQRXSvg2s'),
+            },
+            {
+              name: 'Leg press',
+              videoId: getVideoIdFromUrl('https://youtu.be/IZxyjW7MPJQ?si=7G91tqyocdkiALD-'),
+            },
+          ],
+          // arms: [
+          //   {
+          //     name: 'Bicep curls',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
+          //   },
+          //   {
+          //     name: 'Tricep dips',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
+          //   },
+          //   {
+          //     name: 'Push ups',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/IODxDxX7oi4?si=P35DUgTF6B_Idt0x'),
+          //   },
+          //   {
+          //     name: 'Skull crushers',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/ir5PsbniVSc?si=3oy5OClUVnnxT4cf'),
+          //   },
+          //   {
+          //     name: 'Dumbbell kickback',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/ShCYaoHmWmk?si=FkE2PFkDeLkdgBH7'),
+          //   },
+          // ],
+          // back: [
+          //   {
+          //     name: 'Face pulls',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/0Po47vvj9g4?si=cQloW6VUrwHQRfrV'),
+          //   },
+          //   {
+          //     name: 'Reverse flyers',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/JoCRRZ3zRtI?si=VEus6b3C3yQLsHzD'),
+          //   },
+          //   {
+          //     name: 'T-bar rows',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/hYo72r8Ivso?si=0N1rxmGQYnOydzuH'),
+          //   },
+          //   {
+          //     name: 'Deadlifts',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/1ZXobu7JvvE?si=QzrTekoJfMLqKS-p'),
+          //   },
+          //   {
+          //     name: 'Lat pulldowns',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/B01ZSLFQjzE?si=bgu8gikb55KXSip3'),
+          //   },
+          // ],
+          // chest: [
+          //   {
+          //     name: 'Bench press',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/rT7DgCr-3pg?si=qZwzNn4Zsu73aKVZ'),
+          //   },
+          //   {
+          //     name: 'Dumbbell flyers',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/QENKPHhQVi4?si=FzIvY0c_8Lj4zZxn'),
+          //   },
+          //   {
+          //     name: 'Incline bench press',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/SrqOu55lrYU?si=Ap2mYdk2JiKilHQU'),
+          //   },
+          //   {
+          //     name: 'Chest dips',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/4la6BkUBLgo?si=vRikokkY3BCEuoq4'),
+          //   },
+          //   {
+          //     name: 'Pec deck machine',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/O-OBCfyh9Fw?si=-zxjR71D97rPhalU'),
+          //   },
+          // ],
+          // shoulders: [
+          //   {
+          //     name: 'Shrugs',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/SX1FE0URdv8?si=r-GPkvwXllCf323P'),
+          //   },
+          //   {
+          //     name: 'Upright rows',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/VIoihl5ZZzM?si=BDhzfuRcpqpmDPEl'),
+          //   },
+          //   {
+          //     name: 'Arnold press',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/3ml7BH7mNwQ?si=0JDCQOn1tNZSh-iw'),
+          //   },
+          //   {
+          //     name: 'Overhead press',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/M2rwvNhTOu0?si=MUhCG0H2jGVAoYwX'),
+          //   },
+          //   {
+          //     name: 'Lateral raises',
+          //     videoId: getVideoIdFromUrl('https://youtu.be/XPPfnSEATJA?si=UOML4PooEXThwYez'),
+          //   },
+          // ],
+        },
+      },
+    ];
+  }else if (userBMI && userBMI.category === 'Overweight') {
+    exerciseRecommendations = [
+      {
+        category: 'Overweight',
+        exercises: {
+          cardiovascular: [
+            {
+              name: 'Cycling',
+              videoId: getVideoIdFromUrl('https://youtu.be/J5fYP7DrZjw?si=3nrntxWcvCWjdsb6'),
+            },
+            {
+              name: 'Swimming',
+              videoId: getVideoIdFromUrl('https://youtu.be/nlGsZTsZaFc?si=YSPfwBpx80VtZHX_'),
+            },
+            {
+              name: 'Elliptical Training',
+              videoId: getVideoIdFromUrl('https://youtu.be/F0oRyJCEzfA?si=EnBFsaf6jkRuN88y'),
+            },
+            {
+              name: 'Jump Rope',
+              videoId: getVideoIdFromUrl('https://youtu.be/oHk1MLVEM-E?si=SQshYR3YAQ_xT7U6'),
+            },
+          ],
+          legs: [
+            {
+              name: 'Walking Lunges',
+              videoId: getVideoIdFromUrl('https://youtu.be/2nk3yjfdGz4?si=uAHXbVNvvLPiPu8Q'),
+            },
+            {
+              name: 'Stationary Bike (Cycling)',
+              videoId: getVideoIdFromUrl('https://youtu.be/4Hl1WAGKjMc?si=VGcWcytc6cTsDFQ9'),
+            },
+            {
+              name: 'Step-Ups',
+              videoId: getVideoIdFromUrl('https://youtu.be/Pt5K8zMrwgI?si=DoO8rqxJv-rlORNx'),
+            },
+            {
+              name: 'Leg Press Machine',
+              videoId: getVideoIdFromUrl('https://youtu.be/8EMbB0tCn7Q?si=IhdtGKEl1M6y63kq'),
+            },
+            {
+              name: 'Bodyweight Squats with Stability Ball',
+              videoId: getVideoIdFromUrl('https://youtu.be/EzxYTsfuB6c?si=UPiDNzLg8RkZUmH5'),
+            },
+            {
+              name: 'Lateral Leg Raises',
+              videoId: getVideoIdFromUrl('https://youtu.be/aDPCxEXR_9Q?si=l-YRWQnnOUAgiB7M'),
+            },
           ],
           arms: [
             {
-              name: 'Underweight Arms Exercise 1',
-              videoId: 'VIDEO_ID_HERE',
+              name: 'Chair Dips',
+              videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
             },
-            // Add more arms exercises as needed
+            {
+              name: 'Bicep Curls with Light Weights',
+              videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
+            },
+            {
+              name: 'Arm Circles',
+              videoId: getVideoIdFromUrl('https://youtu.be/UVMEnIaY8aU?si=gNHUWU1aQi0CEDTX'),
+            },
+            {
+              name: 'Tricep Kickbacks',
+              videoId: getVideoIdFromUrl('https://youtu.be/ZO81bExngMI?si=4f3RjXla5GXHWJr0'),
+            },
+            {
+              name: 'Resistance Band Bicep Curls',
+              videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
+            },
+            {
+              name: 'Battle Ropes',
+              videoId: getVideoIdFromUrl('https://youtu.be/pQb2xIGioyQ?si=J80GLMJV2-ebHEBH'),
+            },
           ],
-          // Add more categories or exercises if needed
+          back: [
+            {
+              name: 'Lat Pulldowns',
+              videoId: getVideoIdFromUrl('https://youtu.be/B01ZSLFQjzE?si=bgu8gikb55KXSip3'),
+            },
+            {
+              name: 'Seated Rows',
+              videoId: getVideoIdFromUrl('https://youtu.be/TeFo51Q_Nsc?si=OXbumLscB5piovsh'),
+            },
+            {
+              name: 'Back Extensions',
+              videoId: getVideoIdFromUrl('https://youtu.be/eHbdjqkwvks?si=QYN8thIE1lNx_Ocj'),
+            },
+            {
+              name: 'Superman Exercise',
+              videoId: getVideoIdFromUrl('https://youtu.be/h2iKcNldw-g?si=31ulUeKQiXrSIlQA'),
+            },
+            {
+              name: 'Bent-Over Dumbbell Rows',
+              videoId: getVideoIdFromUrl('https://youtu.be/knB5Q4FN4ck?si=mj8NujXcjLyivHiL'),
+            },
+          ],
+          chest: [
+            {
+              name: 'Modified Push-Ups',
+              videoId: getVideoIdFromUrl('https://youtu.be/SVfWdQTyEMs?si=szVhPn19OeRomEye'),
+            },
+            {
+              name: 'Pec Deck Machine',
+              videoId: getVideoIdFromUrl('https://youtu.be/O-OBCfyh9Fw?si=-zxjR71D97rPhalU'),
+            },
+            {
+              name: 'Seated Shoulder Press',
+              videoId: getVideoIdFromUrl('https://youtu.be/TsduLWuhlFM?si=KnleUyrBiXlHsYB4'),
+            },
+            {
+              name: 'Front and Lateral Raises with Light Weights',
+              videoId: getVideoIdFromUrl('https://youtu.be/sOcYlBI85hc?si=hV2q7VoghKb3VGo7'),
+            },
+            {
+              name: 'Push-Up Variations',
+              videoId: getVideoIdFromUrl('https://youtu.be/tWjBnQX3if0?si=dlK_RW4Dx2j1dj35'),
+            },
+            {
+              name: 'Medicine Ball Chest Pass',
+              videoId: getVideoIdFromUrl('https://youtube.com/shorts/PhxzbdElDnM?si=5OOX6yV0nzLcRHU4'),
+            },
+          ],
+          shoulders: [
+            {
+              name: 'Shrugs',
+              videoId: getVideoIdFromUrl('https://youtu.be/SX1FE0URdv8?si=r-GPkvwXllCf323P'),
+            },
+            {
+              name: 'Upright Rows',
+              videoId: getVideoIdFromUrl('https://youtu.be/VIoihl5ZZzM?si=BDhzfuRcpqpmDPEl'),
+            },
+            {
+              name: 'Arnold Press',
+              videoId: getVideoIdFromUrl('https://youtu.be/3ml7BH7mNwQ?si=0JDCQOn1tNZSh-iw'),
+            },
+            {
+              name: 'Overhead Press',
+              videoId: getVideoIdFromUrl('https://youtu.be/M2rwvNhTOu0?si=MUhCG0H2jGVAoYwX'),
+            },
+            {
+              name: 'Lateral Raises',
+              videoId: getVideoIdFromUrl('https://youtu.be/XPPfnSEATJA?si=UOML4PooEXThwYez'),
+            },
+          ],
+          core: [
+            {
+              name: 'Plank',
+              videoId: getVideoIdFromUrl('https://youtu.be/6LqqeBtFn9M?si=sE7IECJIEXndi9EC'),
+            },
+            {
+              name: 'Bodyweight Squats',
+              videoId: getVideoIdFromUrl('https://youtu.be/l83R5PblSMA?si=30K_SkTMptFc_ibX'),
+            },
+            {
+              name: 'Modified Russian Twists',
+              videoId: getVideoIdFromUrl('https://youtu.be/DJQGX2J4IVw?si=-v9TAcOLGek4HJvk'),
+            },
+            {
+              name: 'Side Plank',
+              videoId: getVideoIdFromUrl('https://youtu.be/9dNL_mtObGQ?si=8-K5jCARupevrSCZ'),
+            },
+            {
+              name: 'Hollow Body Hold',
+              videoId: getVideoIdFromUrl('https://youtu.be/TNHSgs_orU0?si=K6hDR2uv4ErWs7MP'),
+            },
+            {
+              name: 'Reverse Crunches',
+              videoId: getVideoIdFromUrl('https://youtu.be/XY8KzdDcMFg?si=tIdT3YR6pdT5b6Mp'),
+            },
+          ],
+          flexibility: [
+            {
+              name: 'Yoga',
+              videoId: getVideoIdFromUrl('https://youtu.be/wxJBHWPNPkg?si=AlKmfA9xhwqqF-PX'),
+            },
+            {
+              name: 'Static Stretching',
+              videoId: getVideoIdFromUrl('https://youtu.be/uO4KFToGWS0?si=czwJfrD6Qlh39p7F'),
+            },
+            {
+              name: 'Tai Chi',
+              videoId: getVideoIdFromUrl('https://youtu.be/Q6aZ-VQWWFM?si=6ONSeYr4Vu986Tta'),
+            },
+            {
+              name: 'Foam Rolling',
+              videoId: getVideoIdFromUrl('https://youtu.be/KWGsSq0J1Bk?si=A71wtVhgZLBYEekH'),
+            },
+            {
+              name: 'Dynamic Stretching Routine',
+              videoId: getVideoIdFromUrl('https://youtu.be/Vw7PdhxPCS4?si=0pJBnJXc4KEHf-Ch'),
+            },
+            {
+              name: 'Pilates',
+              videoId: getVideoIdFromUrl('https://youtu.be/9Te82opGhiQ?si=8-1wLmYm5zqXExdY'),
+            },
+          ],
         },
       },
-      // Add more categories if needed
+    ];
+  }else if (userBMI && userBMI.category === 'Normal weight') {
+    exerciseRecommendations = [
+      {
+        category: 'Normal weight',
+        exercises: {
+          cardiovascular: [
+            {
+              name: 'Running or Jogging',
+              videoId: getVideoIdFromUrl('https://youtu.be/ZlhCyrTTT4U?si=vxBCzwgPCfJzNIel'),
+            },
+            {
+              name: 'Cycling',
+              videoId: getVideoIdFromUrl('https://youtu.be/J5fYP7DrZjw?si=3nrntxWcvCWjdsb6'),
+            },
+            {
+              name: 'Swimming',
+              videoId: getVideoIdFromUrl('https://youtu.be/nlGsZTsZaFc?si=YSPfwBpx80VtZHX_'),
+            },
+            {
+              name: 'Elliptical Training',
+              videoId: getVideoIdFromUrl('https://youtu.be/F0oRyJCEzfA?si=EnBFsaf6jkRuN88y'),
+            },
+            {
+              name: 'Jump Rope',
+              videoId: getVideoIdFromUrl('https://youtu.be/oHk1MLVEM-E?si=SQshYR3YAQ_xT7U6'),
+            },
+          ],
+          legs: [
+            {
+              name: 'Barbell Back Squats',
+              videoId: getVideoIdFromUrl('https://youtu.be/rrJIyZGlK8c?si=0K3xe27hiZZ_EO_M'),
+            },
+            {
+              name: 'Walking Lunges with Dumbbells',
+              videoId: getVideoIdFromUrl('https://youtu.be/2nk3yjfdGz4?si=uAHXbVNvvLPiPu8Q'),
+            },
+            {
+              name: 'Box jumps',
+              videoId: getVideoIdFromUrl('https://youtu.be/52r_Ul5k03g?si=KptJ389cH3aPQWwT'),
+            },
+            {
+              name: 'Hamstring curls',
+              videoId: getVideoIdFromUrl('https://youtu.be/XkESHgkTdFw?si=U5QfP6PxubbsNpzi'),
+            },
+            {
+              name: 'Lunges',
+              videoId: getVideoIdFromUrl('https://youtu.be/wrwwXE_x-pQ?si=X0YgEf-CQRXSvg2s'),
+            },
+            {
+              name: 'Leg press',
+              videoId: getVideoIdFromUrl('https://youtu.be/IZxyjW7MPJQ?si=7G91tqyocdkiALD-'),
+            },
+          ],
+          arms: [
+            {
+              name: 'Chair Dips',
+              videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
+            },
+            {
+              name: 'Bicep Curls with Light Weights',
+              videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
+            },
+            {
+              name: 'Arm Circles',
+              videoId: getVideoIdFromUrl('https://youtu.be/UVMEnIaY8aU?si=gNHUWU1aQi0CEDTX'),
+            },
+            {
+              name: 'Bicep curls',
+              videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
+            },
+            {
+              name: 'Tricep bips',
+              videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
+            },
+            {
+              name: 'Push ups',
+              videoId: getVideoIdFromUrl('https://youtu.be/IODxDxX7oi4?si=P35DUgTF6B_Idt0x'),
+            },
+          ],
+          back: [
+            {
+              name: 'Face pulls',
+              videoId: getVideoIdFromUrl('https://youtu.be/0Po47vvj9g4?si=cQloW6VUrwHQRfrV'),
+            },
+            {
+              name: 'Reverse flyers',
+              videoId: getVideoIdFromUrl('https://youtu.be/JoCRRZ3zRtI?si=VEus6b3C3yQLsHzD'),
+            },
+            {
+              name: 'T-bar rows',
+              videoId: getVideoIdFromUrl('https://youtu.be/hYo72r8Ivso?si=0N1rxmGQYnOydzuH'),
+            },
+            {
+              name: 'Deadlifts',
+              videoId: getVideoIdFromUrl('https://youtu.be/1ZXobu7JvvE?si=QzrTekoJfMLqKS-p'),
+            },
+            {
+              name: 'Lat pulldowns',
+              videoId: getVideoIdFromUrl('https://youtu.be/B01ZSLFQjzE?si=bgu8gikb55KXSip3'),
+            },
+          ],
+          chest: [
+            {
+              name: 'Bench press',
+              videoId: getVideoIdFromUrl('https://youtu.be/rT7DgCr-3pg?si=qZwzNn4Zsu73aKVZ'),
+            },
+            {
+              name: 'Dumbbell flyers',
+              videoId: getVideoIdFromUrl('https://youtu.be/QENKPHhQVi4?si=FzIvY0c_8Lj4zZxn'),
+            },
+            {
+              name: 'Incline bench press',
+              videoId: getVideoIdFromUrl('https://youtu.be/SrqOu55lrYU?si=Ap2mYdk2JiKilHQU'),
+            },
+            {
+              name: 'Chest dips',
+              videoId: getVideoIdFromUrl('https://youtu.be/4la6BkUBLgo?si=vRikokkY3BCEuoq4'),
+            },
+            {
+              name: 'Pec deck machine',
+              videoId: getVideoIdFromUrl('https://youtu.be/O-OBCfyh9Fw?si=-zxjR71D97rPhalU'),
+            },
+          ],
+          core: [
+            {
+              name: 'Plank',
+              videoId: getVideoIdFromUrl('https://youtu.be/6LqqeBtFn9M?si=sE7IECJIEXndi9EC'),
+            },
+            {
+              name: 'Bodyweight Squats',
+              videoId: getVideoIdFromUrl('https://youtu.be/l83R5PblSMA?si=30K_SkTMptFc_ibX'),
+            },
+            {
+              name: 'Modified Russian Twists',
+              videoId: getVideoIdFromUrl('https://youtu.be/DJQGX2J4IVw?si=-v9TAcOLGek4HJvk'),
+            },
+            {
+              name: 'Side Plank',
+              videoId: getVideoIdFromUrl('https://youtu.be/9dNL_mtObGQ?si=8-K5jCARupevrSCZ'),
+            },
+            {
+              name: 'Hollow Body Hold',
+              videoId: getVideoIdFromUrl('https://youtu.be/TNHSgs_orU0?si=K6hDR2uv4ErWs7MP'),
+            },
+            {
+              name: 'Reverse Crunches',
+              videoId: getVideoIdFromUrl('https://youtu.be/XY8KzdDcMFg?si=tIdT3YR6pdT5b6Mp'),
+            },
+          ],
+          flexibility: [
+            {
+              name: 'Yoga',
+              videoId: getVideoIdFromUrl('https://youtu.be/wxJBHWPNPkg?si=AlKmfA9xhwqqF-PX'),
+            },
+            {
+              name: 'Static Stretching',
+              videoId: getVideoIdFromUrl('https://youtu.be/uO4KFToGWS0?si=czwJfrD6Qlh39p7F'),
+            },
+            {
+              name: 'Tai Chi',
+              videoId: getVideoIdFromUrl('https://youtu.be/Q6aZ-VQWWFM?si=6ONSeYr4Vu986Tta'),
+            },
+            {
+              name: 'Foam Rolling',
+              videoId: getVideoIdFromUrl('https://youtu.be/KWGsSq0J1Bk?si=A71wtVhgZLBYEekH'),
+            },
+            {
+              name: 'Dynamic Stretching Routine',
+              videoId: getVideoIdFromUrl('https://youtu.be/Vw7PdhxPCS4?si=0pJBnJXc4KEHf-Ch'),
+            },
+            {
+              name: 'Pilates',
+              videoId: getVideoIdFromUrl('https://youtu.be/9Te82opGhiQ?si=8-1wLmYm5zqXExdY'),
+            },
+          ],
+        },
+      },
     ];
   }
 
   res.render("exercise_plan", { exerciseRecommendations });
 });
+
   // New route for underweight diet recipes
   app.get("/underweight_diet_recipes", isLoggedIn, (req, res) => {
     res.render("bulk"); // Render the Underweight Diet Recipes page
   });
+
+ // New route for overweight diet recipes
+
+ app.get("/overweight_diet_recipes", isLoggedIn, (req, res) => {
+  res.render("lowcarb"); // Render the overweight Diet Recipes page
+});
+app.get("/weightloss_diet_recipes", isLoggedIn, (req, res) => {
+  res.render("weightloss"); // Render the Weight Loss Diet Recipes page
+});
+
+
+ // New route for Normal weight diet recipes
+
+ app.get("/keto_diet_recipes", isLoggedIn, (req, res) => {
+  res.render("keto"); // Render the overweight Diet Recipes page
+});
+app.get("/lowcarb_diet_recipes", isLoggedIn, (req, res) => {
+  res.render("lowcarb"); // Render the Weight Loss Diet Recipes page
+});
 
 
   app.listen(port, () => {

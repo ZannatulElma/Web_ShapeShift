@@ -1,0 +1,6 @@
+works need to done for elma
+1. organizing the videos for underweight,over,normal ----done
+2. including them in recommendation system---done
+3.including sadia receipe pages into each catagory---done
+4.making css page for the bmi calculate page5.making css for the history page
+5.making css page for the exercise recommendation
