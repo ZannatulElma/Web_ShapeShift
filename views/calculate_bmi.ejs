@@ -16,26 +16,45 @@
 </head>
 
 <body>
-    <h1>Calculate BMI</h1>
-    <form action="/bmi/calculate" method="POST">
-        <label>Height (in meters):</label>
-        <input type="number" step="0.01" name="height" required><br><br>
-        <label>Weight (in kilograms):</label>
-        <input type="number" step="0.01" name="weight" required><br><br>
-        <button type="submit">Calculate BMI</button>
-    </form>
-    <% if (bmi) { %>
-        <h2>Calculated BMI:</h2>
-        <p>BMI: <%= bmi.bmi %></p>
-        <p>Category: <%= bmi.category %></p>
-        <a href="/bmi/history/all"><button>View BMI History</button></a>
-        <!-- Add the link to Exercise Plan based on BMI category -->
-        <% if (bmi.category === 'Underweight' || bmi.category === 'Normal weight' || bmi.category === 'Overweight') { %>
-            <a href="/exercise_plan"><button>Exercise Plan</button></a>
-        <% } %>
-    <% } else { %>
-        <p>No BMI records found.</p>
-    <% } %>
+    <div class="bmi-calculator-container"> <h1>Track BMI, Begin Your Workout Today!</h1>
+        <form action="/bmi/calculate" method="POST">
+            <label>Height (in meters):</label>
+            <input type="number" step="0.01" name="height" required><br><br>
+            <label>Weight (in kilograms):</label>
+            <input type="number" step="0.01" name="weight" required><br><br>
+            <button type="submit" class="bmi-submit-btn">Check BMI</button>
+        </form>
+        <% if (bmi) { %>
+            <h2>Here's Your BMI-</h2>
+            <p>BMI: <%= bmi.bmi %></p>
+            <p>Category: <%= bmi.category %></p>
+            <h4>No worries! Dive into our tailored exercise and diet plans, exclusively designed just for you.</h4>
+            <a href="/bmi/history/all" class="bmi-tracker-btn">View BMI History</a>
+            <!-- Add the link to Exercise Plan based on BMI category -->
+            <% if (bmi.category === 'Underweight' || bmi.category === 'Normal weight' || bmi.category === 'Overweight') { %>
+               
+                <a href="/exercise_plan" class="bmi-tracker-btn">Exercise & Diet Plan</a>
+            <% } %>
+        <% } else { %>
+            <p>No BMI records found.</p>
+        <% } %></div>
+        <div class="bmi-directions">
+            <h2>How to Use Our BMI Tracker</h2>
+            <span><b>Step 1: </b>Enter Your Height: Input your height in meters (cm).<br>
+                <b> Step 2: </b>Enter Your Weight: Input your weight in kilograms (kg).<br>
+                <b> Step 4: </b>Determine Your Category<br>Refer to the categories:<br>
+                <b>Underweight:</b> BMI less than 18.5<br>
+                <b>Normal Weight:</b> BMI 18.5 to 24.9<br>
+                <b>Overweight:</b> BMI 25 or greater<br>
+                <b>Step 5: </b>Check Out the Exercise Plan and Diet Recipes Exclusively Made for You!<br>
+                <b>Step 6:</b> Click on the BMI History Button to Check Previous 5 Days BMI Records.<h3>
+                <h3>So Are You Ready To Step In A New Journey With ShapeShift?</b>
+                
+
+            </span>
+
+        </div>
+   
 </body>
 
 

@@ -1,9 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@700&family=Inter&family=Montserrat:wght@400;500;700&family=Poppins:wght@500;600&display=swap');
+
 body {
-    background-color: lightgreen;
+    background-image:url('/images/top-view-yoga-essential-items.jpg');
+    background-size: cover;
+    /* background-repeat: no-repeat; */
     font-family: 'Poppins', sans-serif;
     width: 100vw;
+    height: 100vh;
     position: absolute;
     z-index: 0;
     overflow-y: scroll;
+    overflow-x: hidden;
 
+}
+
+.bmi-calculator-container{
+    margin-left:10%;
+    margin-top:5%;
+    padding:20px;
+    background-color: rgba(172, 255, 173, 0.5);
+    backdrop-filter: blur(10px); 
+    width:75%;
+    text-align:center;
+
+    
+}
+.bmi-submit-btn{
+    text-decoration: none;
+    color: white;
+    font-size:15px;
+    height:40px;
+    width:130px;
+    border-radius:5px;
+    background-color:#00B830;
+    /* padding:12px; */
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.5s ease;
+}
+.bmi-submit-btn:hover{
+    background-color:white;
+    color:#00B830;
+    border: #00B830 solid 2px;
+    
+}
+.bmi-tracker-btn{
+    margin-top: 30px;
+    margin-bottom:30px;
+    text-decoration: none;
+    color: white;
+    font-size:15px;
+    height:30px;
+    width:130px;
+    border-radius:5px;
+    background-color:#00B830;
+    padding:12px;
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.5s ease;
+}
+.bmi-tracker-btn:hover{
+    background-color:white;
+    color:#00B830;
+    border: #00B830 solid 2px;
+    
+}
+
+
+.bmi-directions{
+    margin-left:10%;
+    margin-top:3%;
+    margin-bottom:3%;
+    padding:20px;
+    background-color: rgba(172, 255, 173, 0.5);
+    backdrop-filter: blur(10px); 
+    width:75%;
 }

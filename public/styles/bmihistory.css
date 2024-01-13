@@ -1,0 +1,56 @@
+/* bmi_history.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+li:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+/* Style for headings (Date, BMI, Category, Height, Weight) */
+li > span {
+    font-weight: bold;
+    display: inline-block;
+    width: 120px; /* Adjust width as needed */
+}
+
+/* Style for individual data items */
+li > div {
+    display: inline-block;
+    width: 150px; /* Adjust width as needed */
+}
+
+/* Style for the "Calculate BMI" button */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

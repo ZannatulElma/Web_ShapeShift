@@ -11,56 +11,104 @@
 
 <body>
     <%- include('partials/navbar_green') %>
-    <% if (exerciseRecommendations.length === 0) { %>
-        <p>No exercises found for this category.</p>
-    <% } else { %>
-        <% exerciseRecommendations.forEach((category) => { %>
+        <% if (exerciseRecommendations.length===0) { %>
+            <p>No exercises found for this category.</p>
+            <% } else { %>
+                <% exerciseRecommendations.forEach((category)=> { %>
 
-            <!-- Add a class based on the category -->
-            <div class="category-container <%= category.category.toLowerCase().replace(/\s+/g, '-') %>">
+                    <!-- Add a class based on the category -->
+                    <div class="category-container <%= category.category.toLowerCase().replace(/\s+/g, '-') %>">
 
-                
 
-                <h1 class="weight-catagory-heading">For <%= category.category %> People</h1>
-                <h1 id="exercise-plan-header">EXERCISE & DIET PLAN!</h1>
-                <!-- Add this button to navigate to the Underweight Diet Recipes page -->
-                <% if (category.category === 'Underweight') { %>
-                    <a href="/underweight_diet_recipes" class="underweight-btn-receipe">Underweight Diet Recipes</a>
-                <% } else if (category.category === 'Overweight') { %>
-                    <a href="/overweight_diet_recipes"><button>Overweight Diet Recipes</button></a>
-                    <a href="/weightloss_diet_recipes"><button>Weightloss Diet Recipes</button></a>
-                <% } else if (category.category === 'Normal weight') { %>
-                    <a href="/keto_diet_recipes"><button>Keto Diet Recipes</button></a>
-                    <a href="/lowcarb_diet_recipes"><button>Lowcarb Diet Recipes</button></a>
-                <% } %>
 
-                <% Object.keys(category.exercises).forEach((subcategory) => { %>
-                    <div class="exercise-item">
-                        <div class="exercise_area_headings">
-                            <h3 class="body-area-heading"><%= subcategory %></h3>
-                        </div>
-                        <div class="exercise_name_video">
-                            <% category.exercises[subcategory].forEach((exercise) => { %>
-                                <div class="exercise_name_video_separate">
-                                    <div class="exercise_name_headings">
-                                        <h4 class="exercise-name-heading"><%= exercise.name %></h4>
+                        <h1 class="weight-catagory-heading">Revitalize, Empower: <%= category.category %> Wellness
+                                Journey Begins</h1>
+                        <h1 id="exercise-plan-header">EXERCISE & DIET PLAN!</h1>
+                        <!-- Add this button to navigate to the Underweight Diet Recipes page -->
+                        <% if (category.category==='Underweight' ) { %>
+                            <div class="underweight_diet_card">
+                                <h4>Revitalize Your Health - Unleash Vitality for Underweight Warriors!</h4>
+                                <span> Discover simple recipes to support your well-being. Check them out for an easy
+                                    <br> path
+                                    to maintaining your health — because a healthier you begins<br>
+                                    with simple choices.</span>
+
+                                <div class="underweight-btn"> <a href="/underweight_diet_recipes"
+                                        class="underweight-btn-receipe">Underweight Diet
+                                        Recipes</a></div>
+
+                            </div>
+
+                            <% } else if (category.category==='Overweight' ) { %>
+                                <div class="overweight_diet_card">
+                                    <h4> Recipe for Overweight Warriors: Wholesome Fuel!</h4>
+                                    <span> Discover these satisfying recipes tailored for those aiming for a <br>
+                                        healthier weight. Check them out and embark on a delicious journey<br>
+                                         towards a balanced and vibrant life.</span>
+
+                                    <div class="overweight-btn"> <a href="/overweight_diet_recipes" class="overweight-btn-receipe">Overweight
+                                                Diet Recipes</a>
+                                        <a href="/weightloss_diet_recipes" class="overweight-btn-receipe">Weightloss Diet Recipes</a>
                                     </div>
-                                    <!-- Use the YouTube iframe embed code -->
-                                    <div class="video_container">
-                                        <div class="videos"><iframe width="300" height="200"
-                                                src="https://www.youtube.com/embed/<%= exercise.videoId %>?"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                allowfullscreen></iframe></div>
-                                    </div>
+
                                 </div>
-                            <% }) %>
-                        </div>
+
+                                <% } else if (category.category==='Normal weight' ) { %>
+                                    <div class="normalweight_diet_card">
+                                        <h4>Recipe for Healthy Weight: Nourishment Unleashed!</h4>
+                                        <span> Explore these nourishing recipes designed for maintaining a healthy
+                                            weight.<br>
+                                            Check them out for a simple and delicious way to prioritize your
+                                            well-being.</span>
+
+                                        <div class="normalweight-btn"> <a href="/keto_diet_recipes" class="normalweight-btn-receipe">Keto Diet
+                                                    Recipes</a>
+                                            <a href="/lowcarb_diet_recipes" class="normalweight-btn-receipe">Lowcarb Diet Recipes</a>
+                                        </div>
+
+                                    </div>
+
+
+                                    <% } %>
+                                        <h1>Now Let's Start Our Workout From Today</h1>
+                                        <% Object.keys(category.exercises).forEach((subcategory)=> { %>
+
+                                            <div class="exercise-item">
+
+                                                <div class="exercise_area_headings">
+                                                    <h3 class="body-area-heading">
+                                                        <%= subcategory %>
+                                                    </h3>
+                                                </div>
+                                                <div class="exercise_name_video">
+                                                    <%
+                                                        Object.values(category.exercises[subcategory]).forEach((exercise)=>
+                                                        { %>
+                                                        <div class="exercise_name_video_separate">
+                                                            <div class="exercise_name_headings">
+                                                                <h4 class="exercise-name-heading">
+                                                                    <%= exercise.name %>
+                                                                </h4>
+                                                            </div>
+                                                            <!-- Use the YouTube iframe embed code -->
+                                                            <div class="video_container">
+                                                                <div class="videos">
+                                                                    <iframe width="300" height="200"
+                                                                        src="https://www.youtube.com/embed/<%= exercise.videoId %>?"
+                                                                        title="YouTube video player" frameborder="0"
+                                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                        allowfullscreen></iframe>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% }) %>
+                                                </div>
+                                            </div>
+                                            <% }) %>
+
                     </div>
-                <% }) %>
-            </div>
-        <% }) %>
-    <% } %>
+                    <% }) %>
+                        <% } %>
 </body>
 
 </html>

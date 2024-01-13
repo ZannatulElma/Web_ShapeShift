@@ -747,9 +747,9 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
       {
         category: 'Normal weight',
         exercises: {
-          cardiovascular: [
+          cardiovascular:[
             {
-              name: 'Running or Jogging',
+              name: 'Running',
               videoId: getVideoIdFromUrl('https://youtu.be/ZlhCyrTTT4U?si=vxBCzwgPCfJzNIel'),
             },
             {
@@ -775,7 +775,7 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
               videoId: getVideoIdFromUrl('https://youtu.be/rrJIyZGlK8c?si=0K3xe27hiZZ_EO_M'),
             },
             {
-              name: 'Walking Lunges with Dumbbells',
+              name: 'Lunges with Dumbbells',
               videoId: getVideoIdFromUrl('https://youtu.be/2nk3yjfdGz4?si=uAHXbVNvvLPiPu8Q'),
             },
             {
@@ -801,7 +801,7 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
               videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
             },
             {
-              name: 'Bicep Curls with Light Weights',
+              name: 'Bicep Curls with Weights',
               videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
             },
             {

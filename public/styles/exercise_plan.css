@@ -21,6 +21,7 @@
 :root{
     --magenta:#fe28a3;
     --deepmagenta:#f400a1;
+    --cuslightgreen:#72E77E;
 
 }
 body {
@@ -79,8 +80,22 @@ font-size:20px;
 button:hover {
     background-color: #45a049;
 } */
-.underweight-btn-receipe{
+.underweight_diet_card{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width:800px;
+    height:150px;
+    background:lightpink;
+    border-radius:5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.underweight-btn{
     margin-top: 20px;
+}
+.underweight-btn-receipe{
+    margin-top: 30px;
     margin-bottom:30px;
     text-decoration: none;
     color: white;
@@ -95,7 +110,73 @@ button:hover {
 .underweight-btn-receipe:hover{
     background-color:pink;
     color:var(--deepmagenta);
-    border: var(--deepmagenta) 2px;
+    border: var(--deepmagenta)  solid 2px;
+    
+}
+.normalweight_diet_card{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width:800px;
+    height:150px;
+    background:lightpink;
+    border-radius:5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.normalweight-btn{
+    margin-top: 20px;
+}
+.normalweight-btn-receipe{
+    margin-top: 30px;
+    margin-bottom:30px;
+    text-decoration: none;
+    color: white;
+    font-size:15px;
+    height:30px;
+    width:130px;
+    border-radius:5px;
+    background-color: var(--deepmagenta);
+    padding:12px;
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.5s ease;
+}
+.normalweight-btn-receipe:hover{
+    background-color:pink;
+    color:var(--deepmagenta);
+    border: var(--deepmagenta)  solid 2px;
+    
+}
+.overweight_diet_card{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width:800px;
+    height:150px;
+    background:var(--cuslightgreen);
+    border-radius:5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.overweight-btn{
+    margin-top: 20px;
+}
+.overweight-btn-receipe{
+    margin-top: 30px;
+    margin-bottom:30px;
+    text-decoration: none;
+    color: white;
+    font-size:15px;
+    height:30px;
+    width:130px;
+    border-radius:5px;
+    background-color:#00B830;
+    padding:12px;
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.5s ease;
+}
+.overweight-btn-receipe:hover{
+    background-color:white;
+    color:#00B830;
+    border: #00B830 solid 2px;
     
 }
 
