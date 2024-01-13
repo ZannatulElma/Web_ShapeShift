@@ -9,32 +9,42 @@
     <link rel="stylesheet" href="/styles/bmihistory.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Roboto:wght@300&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&family=Roboto:wght@300&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-  <h1>BMI History</h1>
-  <ul>
-    <% allBMIRecords.forEach((record) => { %>
-      <li>
-        <span>Date:</span> <%= formatDate(record.date) %> |
-        BMI: <%= record.bmi %> |
-        Category: <%= record.category %> |
-        Height: <%= record.height %> |
-        Weight: <%= record.weight %>
-      </li>
-    <% }) %>
-  </ul>
-  <a href="/calculate_bmi"><button>Calculate BMI</button></a>
+  <h1>Your BMI Tracking Record</h1>
 
-  <script>
-    function formatDate(dateString) {
-      const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
-      const formattedDate = new Date(dateString).toLocaleString('en-US', options);
-      return formattedDate.replace(',', ''); // Remove the comma after the day
-    }
-  </script>
+  <div class="history-container"><table>
+    <tr>
+        <th>Date</th>
+        <th>BMI</th>
+        <th>Category</th>
+        <th>Height</th>
+        <th>Weight</th>
+    </tr>
+    <% allBMIRecords.forEach((record) => { %>
+        <tr>
+            <td><%= (new Date(record.date)).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                timeZone: 'Asia/Dhaka' // Set your desired timezone here
+            }).replace(',', '') %></td>
+            <td><%= record.bmi %></td>
+            <td><%= record.category %></td>
+            <td><%= record.height %></td>
+            <td><%= record.weight %></td>
+        </tr>
+    <% }) %>
+</table>
+<div><a href="/calculate_bmi"  class="bmi-history-page-btn"><b>Back to Previous Page</b></a></div>
+</div>
+    
 </body>
+
 </html>
