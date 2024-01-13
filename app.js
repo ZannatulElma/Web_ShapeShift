@@ -451,94 +451,94 @@ app.get("/exercise_plan", isLoggedIn, (req, res) => {
               videoId: getVideoIdFromUrl('https://youtu.be/IZxyjW7MPJQ?si=7G91tqyocdkiALD-'),
             },
           ],
-          // arms: [
-          //   {
-          //     name: 'Bicep curls',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
-          //   },
-          //   {
-          //     name: 'Tricep dips',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
-          //   },
-          //   {
-          //     name: 'Push ups',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/IODxDxX7oi4?si=P35DUgTF6B_Idt0x'),
-          //   },
-          //   {
-          //     name: 'Skull crushers',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/ir5PsbniVSc?si=3oy5OClUVnnxT4cf'),
-          //   },
-          //   {
-          //     name: 'Dumbbell kickback',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/ShCYaoHmWmk?si=FkE2PFkDeLkdgBH7'),
-          //   },
-          // ],
-          // back: [
-          //   {
-          //     name: 'Face pulls',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/0Po47vvj9g4?si=cQloW6VUrwHQRfrV'),
-          //   },
-          //   {
-          //     name: 'Reverse flyers',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/JoCRRZ3zRtI?si=VEus6b3C3yQLsHzD'),
-          //   },
-          //   {
-          //     name: 'T-bar rows',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/hYo72r8Ivso?si=0N1rxmGQYnOydzuH'),
-          //   },
-          //   {
-          //     name: 'Deadlifts',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/1ZXobu7JvvE?si=QzrTekoJfMLqKS-p'),
-          //   },
-          //   {
-          //     name: 'Lat pulldowns',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/B01ZSLFQjzE?si=bgu8gikb55KXSip3'),
-          //   },
-          // ],
-          // chest: [
-          //   {
-          //     name: 'Bench press',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/rT7DgCr-3pg?si=qZwzNn4Zsu73aKVZ'),
-          //   },
-          //   {
-          //     name: 'Dumbbell flyers',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/QENKPHhQVi4?si=FzIvY0c_8Lj4zZxn'),
-          //   },
-          //   {
-          //     name: 'Incline bench press',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/SrqOu55lrYU?si=Ap2mYdk2JiKilHQU'),
-          //   },
-          //   {
-          //     name: 'Chest dips',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/4la6BkUBLgo?si=vRikokkY3BCEuoq4'),
-          //   },
-          //   {
-          //     name: 'Pec deck machine',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/O-OBCfyh9Fw?si=-zxjR71D97rPhalU'),
-          //   },
-          // ],
-          // shoulders: [
-          //   {
-          //     name: 'Shrugs',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/SX1FE0URdv8?si=r-GPkvwXllCf323P'),
-          //   },
-          //   {
-          //     name: 'Upright rows',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/VIoihl5ZZzM?si=BDhzfuRcpqpmDPEl'),
-          //   },
-          //   {
-          //     name: 'Arnold press',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/3ml7BH7mNwQ?si=0JDCQOn1tNZSh-iw'),
-          //   },
-          //   {
-          //     name: 'Overhead press',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/M2rwvNhTOu0?si=MUhCG0H2jGVAoYwX'),
-          //   },
-          //   {
-          //     name: 'Lateral raises',
-          //     videoId: getVideoIdFromUrl('https://youtu.be/XPPfnSEATJA?si=UOML4PooEXThwYez'),
-          //   },
-          // ],
+          arms: [
+            {
+              name: 'Bicep curls',
+              videoId: getVideoIdFromUrl('https://youtu.be/sYV-ki-1blM?si=NjgY36GmNL5NQfdm'),
+            },
+            {
+              name: 'Tricep dips',
+              videoId: getVideoIdFromUrl('https://youtu.be/6kALZikXxLc?si=KeMbQw4WwlbPQvXy'),
+            },
+            {
+              name: 'Push ups',
+              videoId: getVideoIdFromUrl('https://youtu.be/IODxDxX7oi4?si=P35DUgTF6B_Idt0x'),
+            },
+            {
+              name: 'Skull crushers',
+              videoId: getVideoIdFromUrl('https://youtu.be/ir5PsbniVSc?si=3oy5OClUVnnxT4cf'),
+            },
+            {
+              name: 'Dumbbell kickback',
+              videoId: getVideoIdFromUrl('https://youtu.be/ShCYaoHmWmk?si=FkE2PFkDeLkdgBH7'),
+            },
+          ],
+          back: [
+            {
+              name: 'Face pulls',
+              videoId: getVideoIdFromUrl('https://youtu.be/0Po47vvj9g4?si=cQloW6VUrwHQRfrV'),
+            },
+            {
+              name: 'Reverse flyers',
+              videoId: getVideoIdFromUrl('https://youtu.be/JoCRRZ3zRtI?si=VEus6b3C3yQLsHzD'),
+            },
+            {
+              name: 'T-bar rows',
+              videoId: getVideoIdFromUrl('https://youtu.be/hYo72r8Ivso?si=0N1rxmGQYnOydzuH'),
+            },
+            {
+              name: 'Deadlifts',
+              videoId: getVideoIdFromUrl('https://youtu.be/1ZXobu7JvvE?si=QzrTekoJfMLqKS-p'),
+            },
+            {
+              name: 'Lat pulldowns',
+              videoId: getVideoIdFromUrl('https://youtu.be/B01ZSLFQjzE?si=bgu8gikb55KXSip3'),
+            },
+          ],
+          chest: [
+            {
+              name: 'Bench press',
+              videoId: getVideoIdFromUrl('https://youtu.be/rT7DgCr-3pg?si=qZwzNn4Zsu73aKVZ'),
+            },
+            {
+              name: 'Dumbbell flyers',
+              videoId: getVideoIdFromUrl('https://youtu.be/QENKPHhQVi4?si=FzIvY0c_8Lj4zZxn'),
+            },
+            {
+              name: 'Incline bench press',
+              videoId: getVideoIdFromUrl('https://youtu.be/SrqOu55lrYU?si=Ap2mYdk2JiKilHQU'),
+            },
+            {
+              name: 'Chest dips',
+              videoId: getVideoIdFromUrl('https://youtu.be/4la6BkUBLgo?si=vRikokkY3BCEuoq4'),
+            },
+            {
+              name: 'Pec deck machine',
+              videoId: getVideoIdFromUrl('https://youtu.be/O-OBCfyh9Fw?si=-zxjR71D97rPhalU'),
+            },
+          ],
+          shoulders: [
+            {
+              name: 'Shrugs',
+              videoId: getVideoIdFromUrl('https://youtu.be/SX1FE0URdv8?si=r-GPkvwXllCf323P'),
+            },
+            {
+              name: 'Upright rows',
+              videoId: getVideoIdFromUrl('https://youtu.be/VIoihl5ZZzM?si=BDhzfuRcpqpmDPEl'),
+            },
+            {
+              name: 'Arnold press',
+              videoId: getVideoIdFromUrl('https://youtu.be/3ml7BH7mNwQ?si=0JDCQOn1tNZSh-iw'),
+            },
+            {
+              name: 'Overhead press',
+              videoId: getVideoIdFromUrl('https://youtu.be/M2rwvNhTOu0?si=MUhCG0H2jGVAoYwX'),
+            },
+            {
+              name: 'Lateral raises',
+              videoId: getVideoIdFromUrl('https://youtu.be/XPPfnSEATJA?si=UOML4PooEXThwYez'),
+            },
+          ],
         },
       },
     ];

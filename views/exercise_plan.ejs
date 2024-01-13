@@ -10,17 +10,22 @@
 </head>
 
 <body>
-    <h1>Exercise Plan</h1>
+    <%- include('partials/navbar_green') %>
     <% if (exerciseRecommendations.length === 0) { %>
         <p>No exercises found for this category.</p>
     <% } else { %>
         <% exerciseRecommendations.forEach((category) => { %>
+
             <!-- Add a class based on the category -->
-            <div class="category-container <%= category.category.toLowerCase() %>">
-                <h2><%= category.category %></h2>
+            <div class="category-container <%= category.category.toLowerCase().replace(/\s+/g, '-') %>">
+
+                
+
+                <h1 class="weight-catagory-heading">For <%= category.category %> People</h1>
+                <h1 id="exercise-plan-header">EXERCISE & DIET PLAN!</h1>
                 <!-- Add this button to navigate to the Underweight Diet Recipes page -->
                 <% if (category.category === 'Underweight') { %>
-                    <a href="/underweight_diet_recipes"><button>Underweight Diet Recipes</button></a>
+                    <a href="/underweight_diet_recipes" class="underweight-btn-receipe">Underweight Diet Recipes</a>
                 <% } else if (category.category === 'Overweight') { %>
                     <a href="/overweight_diet_recipes"><button>Overweight Diet Recipes</button></a>
                     <a href="/weightloss_diet_recipes"><button>Weightloss Diet Recipes</button></a>
@@ -32,13 +37,13 @@
                 <% Object.keys(category.exercises).forEach((subcategory) => { %>
                     <div class="exercise-item">
                         <div class="exercise_area_headings">
-                            <h3><%= subcategory %></h3>
+                            <h3 class="body-area-heading"><%= subcategory %></h3>
                         </div>
                         <div class="exercise_name_video">
                             <% category.exercises[subcategory].forEach((exercise) => { %>
                                 <div class="exercise_name_video_separate">
                                     <div class="exercise_name_headings">
-                                        <h4><%= exercise.name %></h4>
+                                        <h4 class="exercise-name-heading"><%= exercise.name %></h4>
                                     </div>
                                     <!-- Use the YouTube iframe embed code -->
                                     <div class="video_container">

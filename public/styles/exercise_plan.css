@@ -1,27 +1,71 @@
 /* public/exercise_plan.css */
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@700&family=Inter&family=Montserrat:wght@400;500;700&family=Poppins:wght@500;600&display=swap');
+.category-container.overweight{
+    background-image:url('/images/top-view-green-weights-meter.jpg');
+    background-size:cover;
+}
+.category-container.underweight{
+    background-image: url(/images/newyeloow.jpeg);
+    /* background-size: cover; */
+}
+.category-container.normal-weight{
+    background-image: url(/images/wepik-export-20240113142125EwED.jpeg);
+  /* background-size: cover; */
 
+}
+
+*{
+    margin: 0px;
+    padding: 0px;  
+}
+:root{
+    --magenta:#fe28a3;
+    --deepmagenta:#f400a1;
+
+}
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    /* width: 100vw; */
+ 
+    
 }
 
 h1 {
-    color: #333;
+    color: white;
 }
 
 h2 {
-    color: #0066cc;
+    color: white;
 }
 
 h3 {
-    color: #009933;
+    color:var(--deepmagenta);
 }
 
 h4 {
-    color: #ff6600;
+    color:white;
 }
 
-button {
+#exercise-plan-header {
+    margin-right:15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.weight-catagory-heading{
+    margin-bottom: 20px;
+}
+.body-area-heading{
+    margin-top:50px;
+    font-size: 25px;
+}
+.exercise-name-heading{
+margin-bottom: 10px;
+font-size:20px;
+}
+/* button {
     background-color: #4caf50;
     color: white;
     padding: 10px 20px;
@@ -29,38 +73,63 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: static;
 }
 
 button:hover {
     background-color: #45a049;
+} */
+.underweight-btn-receipe{
+    margin-top: 20px;
+    margin-bottom:30px;
+    text-decoration: none;
+    color: white;
+    font-size:15px;
+    height:30px;
+    width:130px;
+    border-radius:5px;
+    background-color: var(--deepmagenta);
+    padding:12px;
+    transition: color 0.8s ease, background-color 0.8s ease, border-color 0.5s ease;
+}
+.underweight-btn-receipe:hover{
+    background-color:pink;
+    color:var(--deepmagenta);
+    border: var(--deepmagenta) 2px;
+    
 }
 
 /* Style for the container of each category */
 .category-container {
-    margin-bottom: 30px;
-    margin-top: 10px;
+    /* margin-top:20px; */
+    padding:30px;
+    overflow-x: auto;
+    white-space:nowrap;
+    /* margin-bottom: 30px;
+    margin-top: 10px; */
     /* Adjust margin as needed */
 }
 
 /* Style for the exercise container within a category */
-/* .exercise-container {
+.exercise-container {
     display: flex;
-    /* flex-direction: column; */
-/* overflow-x: auto; Enable horizontal scrolling */
+overflow-x: auto;/* Enable horizontal scrolling */
+}
 
 
 /*Style for each individual exercise item */
 .exercise-item {
-    margin-right: 20px;
+    margin-right: 15px;
     display: flex;
     flex-direction: column;
 }
 
 /* Adjust margin between exercises as needed */
-/* .video_container {
+.video_container {
     display: flex;
-    /* flex-direction:row ; */
-/* } */ 
+    overflow-x: auto;
+    margin-right: 15px;
+ } 
 
 /* Optional: Add styles for other elements as needed */
 .exercise_name_video{

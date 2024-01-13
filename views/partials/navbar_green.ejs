@@ -1,0 +1,140 @@
+<style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      font-family: 'Poppins', sans-serif;
+    }
+  
+    nav {
+        background:linear-gradient(to left,#339c50,#5db570,#96eb97);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    nav ul {
+      width: 100%;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    nav li {
+      height: 50px;
+    }
+  
+    nav li a {
+      height: 100%;
+      text-decoration: none;
+      padding: 0px 30px;
+      color: rgb(255, 255, 255);
+      font-size: large;
+      display: flex;
+      align-items: center;
+    }
+  
+    nav img {
+      height: 25px;
+      width: 25px;
+      padding: 10px 30px;
+    }
+  
+    nav a:hover {
+      background-color: #96eb97;
+    }
+  
+    nav li:first-child {
+      margin-right: auto;
+    }
+  
+    .menubutton {
+      display: none;
+    }
+  
+    .responsive_sidebar {
+      position: fixed;
+      background-color: rgba(172, 255, 173, 0.5);
+      backdrop-filter: blur(10px);
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 250px;
+      z-index: 999;
+      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  
+    .responsive_sidebar li {
+      width: 100%;
+    }
+  
+    .responsive_sidebar a {
+      width: 100%;
+    }
+  
+    @media (max-width: 800px) {
+      .hideOnMobile {
+        display: none;
+      }
+  
+      .menubutton {
+        display: block;
+      }
+    }
+  
+    @media (max-width: 400px) {
+      .responsive_sidebar {
+        width: 100%;
+      }
+  
+      .menubutton {
+        display: block;
+      }
+    }
+  </style>
+  
+  <section class="responsive_navbar">
+    <nav>
+      <ul>
+        <li><a href="/">ShapeShift</a></li>
+        <li class="hideOnMobile"><a href="/">Home</a></li>
+        <li class="hideOnMobile"><a href="#">Workout</a></li>
+        <li class="hideOnMobile">
+          <a href="/mealfrontpage">Meal Planning</a>
+        </li>
+        <li class="hideOnMobile"><a href="#">Meditation</a></li>
+        <li class="hideOnMobile"><a href="/moodtracker">Mood Tracker</a></li>
+        <li class="hideOnMobile"><a href="#">About Us</a></li>
+        <li class="hideOnMobile"><a href="/logout">Logout</a></li>
+        <li class="menubutton" onclick="showSidebar()">
+          <img src="./images/list.png" alt="" />
+        </li>
+      </ul>
+      <ul class="responsive_sidebar">
+        <li onclick="hideSidebar()">
+          <img src="./images/close.png" alt="" />
+        </li>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Workout</a></li>
+        <li><a href="#">Meal Planning</a></li>
+        <li><a href="#">Meditation</a></li>
+        <li><a href="/moodtracker">Mood Tracker</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </section>
+  
+  <script>
+    function showSidebar() {
+      const sidebar = document.querySelector(".responsive_sidebar");
+      sidebar.style.display = "flex";
+    }
+    function hideSidebar() {
+      const sidebar = document.querySelector(".responsive_sidebar");
+      sidebar.style.display = "none";
+    }
+  </script>
+  
