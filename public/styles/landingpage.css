@@ -1,19 +1,20 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Gupter:wght@700&family=Inter&family=Montserrat:wght@400;500;700&family=Poppins:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@700&family=Inter&family=Montserrat:wght@400;500;700&family=Poppins:wght@500;600&display=swap');
 
 
 * {
     margin: 0px;
     padding: 0px;
 }
-:root{
-    --mintgreen:#cbecb5;
-    --deepmintgreen:#5db570;
+
+:root {
+    --mintgreen: #cbecb5;
+    --deepmintgreen: #5db570;
 }
+
 body {
     /* min-height: 100vh;
     min-width: 100vw; */
-    background-image:url(/images/rm422-047.jpg);
+    background-image: url(/images/rm422-047.jpg);
     font-family: 'Poppins', sans-serif;
     width: 100vw;
     position: absolute;
@@ -22,7 +23,7 @@ body {
 }
 
 nav {
-    background:linear-gradient(to left,#339c50,#5db570,#96eb97);
+    background: linear-gradient(to left, #339c50, #5db570, #96eb97);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -46,7 +47,7 @@ nav li a {
     padding: 0px 30px;
     font-family: 'Poppins';
     color: white;
-    font-size:20px;
+    font-size: 20px;
     display: flex;
     align-items: center;
 
@@ -96,26 +97,7 @@ nav li:first-child {
     width: 100%;
 }
 
-@media(max-width:800px) {
-    .hideOnMobile {
-        display: none;
 
-    }
-
-    .menubutton {
-        display: block;
-    }
-}
-
-@media(max-width:400px) {
-    .responsive_sidebar {
-        width: 100%;
-    }
-
-    .menubutton {
-        display: block;
-    }
-}
 
 .headerpart {
     width: 100vw;
@@ -123,41 +105,46 @@ nav li:first-child {
     background-size: cover;
     background-position: center;
 }
-.intro_part{
-    z-index:2;
-    position:absolute;
-   left:25%;
-   padding-top:100px;
+
+.intro_part {
+    z-index: 2;
+    position: absolute;
+    left: 25%;
+    padding-top: 100px;
 
 }
-.introbtnpart{
-   margin-top:40px; 
-   margin-left:-6px;
+
+.introbtnpart {
+    margin-top: 40px;
+    margin-left: -6px;
 }
-.getstartedbtn{
+
+.getstartedbtn {
     margin-top: 20px;
     text-decoration: none;
     color: white;
-    font-size:18px;
-    height:20px;
-    width:130px;
+    font-size: 18px;
+    height: 20px;
+    width: 130px;
     background-color: green;
-    padding:15px;
-    border-radius:25px;
+    padding: 15px;
+    border-radius: 25px;
     transition: color 0.8s ease, background-color 0.8s ease, border-color 0.8s ease;
 }
-.getstartedbtn:hover{
+
+.getstartedbtn:hover {
     background-color: white;
     color: green;
     border: green solid 2px;
-    
+
 }
-h2{
-    color:green;
+
+h2 {
+    color: green;
     font-size: 80px;
 }
 
-small{
+small {
     color: white;
     font-size: 50px;
 }
@@ -175,144 +162,271 @@ small{
     right: 120px;
     top: 80px;
 }
-.flowerspart{
-    position:absolute;
-    display:flex;
-    bottom:0px;
+
+.flowerspart {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
     z-index: 2;
-    gap:100px; 
+    gap: 100px;
     right: 40px;
-    
+
 
 }
 
 .flowerspart img {
     width: 60px;
-  animation:flower 5s linear infinite;
+    animation: flower 5s linear infinite;
 }
 
 @keyframes flower {
-   0%{
-    transform:translateY(100vh);
-    opacity:0;
-   } 
-   50%{
-    opacity:1;
-   } 
-   70%{
-    opacity:1;
-   }
-   80%{
-    opacity:1;
-   } 
-   90%{
-    opacity:1;
-   }  
-   100%{
-    transform:translateY(-250vh);
-    opacity:0;
-   } 
-    
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-250vh);
+        opacity: 0;
+    }
+
 }
-.flowerspart img:nth-child(1){
+
+.flowerspart img:nth-child(1) {
     animation-delay: 2s;
 }
-.flowerspart img:nth-child(2){
+
+.flowerspart img:nth-child(2) {
     animation-delay: 1s;
 }
-.flowerspart img:nth-child(3){
+
+.flowerspart img:nth-child(3) {
     animation-delay: 3s;
 }
-.flowerspart img:nth-child(4){
+
+.flowerspart img:nth-child(4) {
     animation-delay: 4.5s;
 }
-.flowerspart img:nth-child(5){
+
+.flowerspart img:nth-child(5) {
     animation-delay: 3s;
 }
-.flowerspart img:nth-child(6){
+
+.flowerspart img:nth-child(6) {
     animation-delay: 6s;
 }
 
 /* css of midpart of landing page*/
-.midpart{
-    margin-top:150px;
+.midpart {
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.midpartheading{
+
+.midpartheading {
     text-align: center;
     font-size: 70px;
     font-weight: 600;
     color: white;
-   opacity: 0;
-   transition:opacity 2s ease,transform 2s ease;
-   transform: translateY(50px);
-    
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease;
+    transform: translateY(50px);
+
 }
-.show{
+
+.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-.midpartcard{
-    background:linear-gradient(to right,#339c50,#59b46e,#96eb97);
+.midpartcard {
+    background: linear-gradient(to right, #339c50, #59b46e, #96eb97);
     margin-top: 20px;
     height: 250px;
-    width:1000px;
-    padding:15px;
+    width: 1000px;
+    padding: 15px;
     display: flex;
-   justify-content:space-between;
-    
+    justify-content: space-between;
+
     border-radius: 10px 150px;
-    transition:opacity 2s ease,transform 2s ease;
+    transition: opacity 2s ease, transform 2s ease;
     transform: translateX(300px);
 
 }
-.showmidpartcard{
+
+.showmidpartcard {
     opacity: 1;
     transform: translateX(0);
 }
-.cardimg{
-  background-color: #cbecb5; 
-  border-radius: 150px;
-  margin-right: 10px;
-   
+
+.cardimg {
+    background-color: #cbecb5;
+    border-radius: 150px;
+    margin-right: 10px;
+
 }
-.cardheading{
+
+.cardheading {
     margin-left: 30px;
 }
-.cardheading h3{
+
+.cardheading h3 {
     margin-top: 25px;
     font-size: 25px;
-color: white;
+    color: white;
 }
-.cardheading h5{
+
+.cardheading h5 {
     margin-top: 30px;
     font-size: 18px;
     color: white;
-  
+
 }
-.midcardbtn{
+
+.midcardbtn {
     margin-top: 40px;
     text-align: right;
     margin-right: 30px;
 }
-.midcardbtn a{
+
+.midcardbtn a {
     /* margin-top: 30px; */
     text-decoration: none;
     color: white;
-    font-size:18px;
-    height:20px;
-    width:130px;
+    font-size: 18px;
+    height: 20px;
+    width: 130px;
     background-color: green;
-    padding:15px;
-    border-radius:15px;
+    padding: 15px;
+    border-radius: 15px;
     transition: color 0.8s ease, background-color 0.8s ease, border-color 0.8s ease;
 }
-.midcardbtn a:hover{
+
+.midcardbtn a:hover {
     background-color: white;
     color: green;
     border: green solid 2px;
-    
+
+}
+
+@media(max-width:800px) {
+    .hideOnMobile {
+        display: none;
+
+    }
+
+    .menubutton {
+        display: block;
+    }
+
+    .headerpart {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intro_part {
+        margin-top: 350px;
+        /*done*/
+    }
+
+    .midpartheading {
+        margin-top: 200px;
+    }
+
+    .midpartcard {
+        background: linear-gradient(to right, #339c50, #59b46e, #96eb97);
+        margin-top: 20px;
+        height:250px;
+        width:80%;
+        padding: 15px;
+        /* display: flex;
+        justify-content: space-between; */
+        border-radius: 10px 150px;
+        transition: opacity 2s ease, transform 2s ease;
+        transform: translateX(300px);
+
+    }
+
+    .showmidpartcard {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .cardimg {
+        display: none;
+        background-color: #cbecb5;
+        border-radius: 150px;
+        margin-right: 10px;
+
+    }
+
+    .cardheading {
+        margin-left: 30px;
+    }
+
+    .cardheading h3 {
+        margin-top: 25px;
+        font-size: 25px;
+        color: white;
+    }
+
+    .cardheading h5 {
+        margin-top: 30px;
+        font-size: 18px;
+        color: white;
+
+    }
+
+    .midcardbtn {
+        margin-top:10px;
+        /* text-align: right; */
+        /* margin-right: 30px; */
+    }
+
+    .midcardbtn a {
+        /* margin-top: 30px; */
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        height: 20px;
+        width: 130px;
+        background-color: green;
+        padding: 15px;
+        border-radius: 15px;
+        transition: color 0.8s ease, background-color 0.8s ease, border-color 0.8s ease;
+    }
+
+    .midcardbtn a:hover {
+        background-color: white;
+        color: green;
+        border: green solid 2px;
+
+    }
+}
+
+@media(max-width:400px) {
+    .responsive_sidebar {
+        width: 100%;
+    }
+
+    .menubutton {
+        display: block;
+    }
 }
