@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/styles/about.css">
+</head>
+<body>
+    <%- include('partials/navbar_green') %>
+    <section class="midpart" id="midpart">
+        <div class="midpartheading">
+          How to Use Shapeshift?</div>
+        <div class="midpartcard">
+          <span class="cardheading">
+            <h3>Prep, Eat, Repeat:Meal Planner!</h3>
+            <h5>"With ShapeShift, tailor your meal plans effortlessly. Lose weight, gain strength, or embrace wellness —with Keto Diet,Low-Carb Diet, Weight Loss Diet, Bulking diet
+            Just Click on your preffered diet catagory and check out the healthy receipes with necessary directions and start your healthy diet from today!""
+             </h5>
+            <div class="midcardbtn"> <a href="/mealfrontpage">Let's Cook
+                <i class="bi bi-arrow-right"></i>
+              </a></div>
+    
+          </span>
+          <div class="cardimg">
+            <img src="/images/eating.png" alt="">
+          </div>
+        </div>
+        <div class="midpartcard">
+          <span class="cardheading">
+            <h3>Track, Understand, Elevate:Mood Tracker!</h3>
+            <h5>
+              "Engage with ShapeShift's Mood Tracker.Choose your mood condition and write notes about your day. Explore 7 days of your mood's story. Unlock personalized insights and
+              interactive tips, uplifting your spirits for a brighter tomorrow."</h5>
+            <div class="midcardbtn"> <a href="/moodtracker">Track Mood
+                <i class="bi bi-arrow-right"></i>
+              </a></div>
+    
+          </span>
+          <div class="cardimg">
+            <img src="/images/mood.png" alt="">
+          </div>
+        </div>
+        <div class="midpartcard">
+          <span class="cardheading">
+            <h3>Track,Tone,Transform-BMI Tracker!</h3>
+            <h5>
+              "Use ShapeShift's BMI tracker to monitor your progress based on your height and weight, get your bmi and personalized exercises and diet recommendation for weight goals—shedding,
+              gaining, or maintaining. Get Tailored workouts  for underweight,overweight ,normal weight and get exericse for different body parts."</h5>
+            <div class="midcardbtn"> <a href="/calculate_bmi">Begin Exercise
+                <i class="bi bi-arrow-right"></i>
+              </a></div>
+    
+          </span>
+          <div class="cardimg">
+            <img src="/images/bike-.png" alt="">
+          </div>
+        </div>
+    
+    
+      </section>
+      <script>
+        function showSidebar() {
+          const sidebar = document.querySelector(".responsive_sidebar");
+          sidebar.style.display = "flex";
+        }
+        function hideSidebar() {
+          const sidebar = document.querySelector(".responsive_sidebar");
+          sidebar.style.display = "none";
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            console.log(entry);
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+            } else {
+              entry.target.classList.remove('show');
+            }
+            if (entry.isIntersecting) {
+              entry.target.classList.add('showmidpartcard');
+            } else {
+              entry.target.classList.remove('showmidpartcard');
+            }
+          });
+        }, { threshold:0.2});
+        const hiddenElements = document.querySelectorAll('.midpartheading,.midpartcard'); // Use querySelectorAll
+        hiddenElements.forEach((el) => observer.observe(el));
+    
+    
+    
+      </script>
+</body>
+
+</html>

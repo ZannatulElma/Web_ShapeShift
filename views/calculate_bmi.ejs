@@ -19,7 +19,7 @@
     <%- include('partials/navbar_green') %>
     <div class="bmi-calculator-container"> <h1>Track BMI, Begin Your Workout Today!</h1>
         <form action="/bmi/calculate" method="POST">
-            <label>Height (in meters):</label>
+            <label>Height (in centimeters):</label>
             <input type="number" step="0.01" name="height" required><br><br>
             <label>Weight (in kilograms):</label>
             <input type="number" step="0.01" name="weight" required><br><br>
@@ -29,7 +29,7 @@
             <h2>Here's Your BMI-</h2>
             <p>BMI: <%= bmi.bmi %></p>
             <p>Category: <%= bmi.category %></p>
-            <h4>No worries! Dive into our tailored exercise and diet plans, exclusively designed just for you.</h4>
+            <div class="bmi-msg">No worries! Dive into our tailored exercise and diet plans, exclusively designed just for you.</div>
             <a href="/bmi/history/all" class="bmi-tracker-btn">View BMI History</a>
             <!-- Add the link to Exercise Plan based on BMI category -->
             <% if (bmi.category === 'Underweight' || bmi.category === 'Normal weight' || bmi.category === 'Overweight') { %>

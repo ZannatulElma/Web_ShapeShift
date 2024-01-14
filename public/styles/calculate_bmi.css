@@ -43,8 +43,8 @@ body {
     
 }
 .bmi-tracker-btn{
-    margin-top: 30px;
-    margin-bottom:30px;
+    margin-top: 50px;
+    margin-bottom:40px;
     text-decoration: none;
     color: white;
     font-size:15px;
@@ -61,7 +61,10 @@ body {
     border: #00B830 solid 2px;
     
 }
-
+.bmi-msg{
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
 
 .bmi-directions{
     margin-left:10%;

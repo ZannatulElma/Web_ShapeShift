@@ -950,6 +950,11 @@ app.get("/lowcarb_diet_recipes", isLoggedIn, (req, res) => {
 });
 
 
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+
   app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
   });
