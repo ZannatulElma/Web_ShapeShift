@@ -80,3 +80,33 @@ p {
 h4{
     color: #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+    article {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+    }
+
+    .recipe-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    .yield {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .block {
+        padding: 10px;
+    }
+
+    .instructions li {
+        font-size: 16px;
+    }
+}
